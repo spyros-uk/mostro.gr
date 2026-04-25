@@ -1,0 +1,392 @@
+## Category: Cabin
+* **Habitability:** Extended Multi-Day Residency and Blue-Water Autonomy.
+* **Overview:** The Cabin series is designed for mariners seeking the versatility of a RIB combined with the internal volume and amenities of a cruiser. These vessels are engineered for long-range autonomy, featuring significant fuel and water storage, internal sleeping quarters, and dedicated sanitary facilities. The structural design prioritizes a high-freeboard GRP superstructure that integrates seamlessly with the inflatable collars to provide a dry and stable living environment even in heavy seas. By placing heavy components low within the hull’s stringer system, Mostro achieves a degree of stability that mitigates the rolling motions typical of high-profile vessels at anchor.
+
+### Model: Cabin 8
+* **Description:** The Cabin 8 serves as a sophisticated entry point for long-distance cruising. The vessel’s engineering emphasizes electrical redundancy and ventilation, crucial for overnight stays in Mediterranean climates. Standard equipment includes a 10-position electrical panel, comprehensive engine room lighting, and a full electrical installation. The habitability is enhanced by four opening windows and a ceiling hatch, allowing for cross-ventilation. The entry is secured by a high-grade Plexiglass door, and structural hardware includes anchor guides, bow and stern stainless steel (inox) cleats, and a double peripheral elastic fender to protect the tubes from pier abrasion.
+* **Technical Specifications:**
+    * Electrical Management: 10-Position Fuse Panel
+    * Fuel Storage Capacity: 440 Liters
+    * Freshwater Capacity: 150 Liters
+    * Tube Protection: Double Peripheral Elastic Fender
+    * Ventilation Ports: 4 Side Windows + 1 Ceiling Hatch
+    * Sanitary Equipment: Marine or Chemical Toilet
+    * Structural Material: Marine-Grade Inox Railings
+    * Access Hardware: Plexiglass Entry Door
+
+### Model: Cabin 9
+* **Description:** The Cabin 9 represents a shift toward increased deck utility and higher passenger capacity while maintaining the core "residency" features of the 8. This model builds upon the standard 10-position electrical infrastructure and engine room illumination. The increased length over the Cabin 8 provides a more favorable hull-speed ratio and greater longitudinal stability. It focuses on the professional integration of the mechanical systems within the illuminated maintenance bay, ensuring ease of service during long-range voyages.
+* **Technical Specifications:**
+    * Electrical Distribution: 10-Position Control Board
+    * Maintenance Access: Illuminated Engine Compartment
+    * Navigation Suite: Full Navigation Lights
+    * Deck Hardware: Bow and Stern Inox Cleats
+    * Safety Infrastructure: Multi-Chamber Buoyancy System
+
+### Model: Cabin 10
+* **Description:** The Cabin 10 is the flagship of the residency-focused fleet, engineered for maximum volume and the highest sea-state ratings. Utilizing the same 10-position electrical panel found throughout the series, the Cabin 10 is optimized for extended cruises with a larger crew. The engineering focus is on structural rigidity, using a reinforced GRP hull to support the larger cabin footprint. This model is designed for users who require a permanent maritime residence capable of high-speed transit between island groups.
+* **Technical Specifications:**
+    * Electrical Management: 10-Position Control Board
+    * Operational Support: Illuminated Engine Room
+    * Hull Configuration: Long-Range Deep-V Cabin
+    * Equipment Standard: Professional Grade Navigation Lights
+
+---
+
+## Category: Caramel
+* **Habitability:** Ultra-Luxury High-Speed Cruising.
+* **Overview:** The Caramel category is defined by a single, high-performance model that bridges the gap between a sport RIB and a luxury yacht tender. The architectural intent is to provide a "Grand Tourer" experience, emphasizing high-speed efficiency and a massive internal footprint for social activities.
+
+### Model: Caramel
+* **Description:** The Caramel model is one of the most technically advanced platforms in the Mostro lineup, featuring an 8-chamber tube system for maximum safety and a hull length that approaches the 10-meter mark. The engineering focuses on hydrodynamic lift and stability. The 8-chamber design ensures that even in the event of multiple chamber failures, the vessel retains sufficient buoyancy to remain operational. The internal width of 2.46 meters is exceptional for its class, allowing for a spacious deck layout that can accommodate up to 10 passengers in a luxury configuration.
+* **Technical Specifications:**
+    * Total Length: 9.90 m
+    * Hull Length: 9.40 m
+    * Total Width: 3.30 m
+    * Internal Length: 8.50 m
+    * Internal Width: 2.46 m
+    * Waterline Length: 8.40 m
+    * Tube Diameter: 45 - 58 cm
+    * Air Chambers: 8
+    * Passenger Capacity: 10
+
+---
+
+## Category: Dolce Vita
+* **Habitability:** High-End Mediterranean Lifestyle and Social Entertaining.
+* **Overview:** The Dolce Vita series is engineered for the aesthetic and functional requirements of luxury day-boating. The design philosophy emphasizes deck ergonomics, expansive sunbathing platforms, and high-quality upholstery, intended for social cruises and high-visibility coastal exploration.
+
+### Model: Dolce Vita
+* **Description:** The Dolce Vita model serves as a premium lifestyle platform, often utilized as a high-end chase boat or a primary vessel for elite coastal social engagements. This model prioritizes the "open-air" experience, with a hull design that provides a stable and dry platform even when carrying a full passenger load. The hull is balanced for both fuel efficiency at cruising speeds and the ability to reach high peak velocities when required.
+* **Technical Specifications:**
+    * Design Intent: Luxury Social Performance
+    * Hull Material: Reinforced GRP / Hypalon-Neoprene
+    * Equipment Suite: Premium Upholstery and Deck Fittings
+    * Standards: Full Safety and Navigation Compliance
+
+---
+
+## Category: Vendetta
+* **Habitability:** Performance-Oriented Interception and Sport Transit.
+* **Overview:** The Vendetta category is focused on the "Sport-Interceptor" market segment. The design is characterized by a minimalist, aggressive profile and a hull optimized for hydrodynamic lift and sharp handling at high speeds. Habitability is centered on the pilot's control and ergonomic seating for high-speed transits.
+
+### Model: Vendetta
+* **Description:** The Vendetta model is a performance-first RIB, engineered for users who prioritize rapid transit and technical handling. The naval architecture involves a specific strake and step configuration designed to reduce wetted surface area. This allows the vessel to achieve higher speeds with less horsepower compared to heavier cruising hulls. The deck is laid out to ensure the pilot has maximum visibility and access to all critical performance data.
+* **Technical Specifications:**
+    * Performance Profile: High-Speed Interceptor
+    * Ergonomics: Performance Helm Seating
+    * Hull Architecture: Stepped/High-Lift Design
+    * Intent: Rapid Transit / Sport
+
+---
+
+## Category: Spirit
+* **Habitability:** Versatile Multi-Mission Utility.
+* **Overview:** The Spirit series represents the versatile core of the Mostro range. These vessels are designed to be equally capable of sport fishing, water sports, and general family recreation. The engineering focus is on a modular deck layout and a hull that performs predictably across a wide range of load conditions.
+
+### Model: Spirit 550
+* **Description:** The Spirit 550 is a compact yet highly capable RIB, designed for ease of management and versatile coastal use. It is optimized for users who require a boat that is easy to trailer and launch but provides the safety of an offshore-capable hull. The design emphasizes a dry ride, utilizing high tube placement to deflect spray.
+* **Technical Specifications:**
+    * Length Class: 5.50 m
+    * Mission Profile: Multi-Purpose Day Boating
+    * Portability: Trailer-Optimized Architecture
+
+### Model: Spirit 650
+* **Description:** The Spirit 650 is a significant technical upgrade within the category, featuring a 200-liter fuel capacity and a high-power rating for extended range and speed. Standard equipment is comprehensive, including a 6-position fuse panel, automatic bilge pump, and navigation lights. The helm features a semi-standing "leaning post" seat with an integrated wet bar and a folding table, enhancing social utility. The vessel is rated for a 200 HP outboard, providing professional-grade performance.
+* **Technical Specifications:**
+    * Total Length: 6.55 m
+    * Total Width: 2.48 m
+    * Internal Length: 5.55 m
+    * Internal Width: 2.00 m
+    * Tube Diameter: 0.55 m
+    * Fuel Tank Capacity: 200 Liters
+    * Weight: 760 kg
+    * Max Horsepower: 200 HP
+    * Passenger Capacity: 8
+
+---
+
+## Category: Corvette
+* **Habitability:** Aerodynamic High-Speed Coastal Sprinting.
+* **Overview:** The Corvette series is engineered for the high-speed enthusiast. These models are characterized by a narrower beam-to-length ratio compared to the Family or Spirit lines, allowing for a "piercing" hull action that maintains speed in choppy water. The focus is on aerodynamic efficiency and rapid coastal transit.
+
+### Model: Corvette 68
+* **Description:** The Corvette 68 is designed for rapid response and high-speed exploration, featuring a streamlined hull profile. Built for the driver who enjoys the mechanical sensation of a high-performance boat. The layout is minimalist, focusing on reducing weight to maximize the performance of the outboard engine.
+* **Technical Specifications:**
+    * Design Focus: High-Speed Streamlining
+    * Hull Profile: Narrow Beam / Deep-V
+    * Equipment: Performance Helm and Navigation
+
+### Model: Corvette 78
+* **Description:** The Corvette 78 provides increased longitudinal stability, allowing the driver to maintain high speeds in more challenging sea states. The additional length allows the hull to span wave crests more effectively, providing a smoother ride at velocity. Habitability is slightly expanded over the 68, with more space for passenger seating and equipment storage.
+* **Technical Specifications:**
+    * Length Class: 7.80 m
+    * Stability: Enhanced Wave-Spanning
+    * Performance: High-Velocity Coastal Transit
+
+---
+
+## Category: Family
+* **Habitability:** Passive Safety and Multi-Generational Leisure.
+* **Overview:** The Family series is the most safety-centric category in the Mostro fleet. The design philosophy centers on high internal coamings, numerous handrails, and a stable hull platform that remains predictable during maneuvers. Habitability focuses on ease of access to the water and secure seating for children and elderly passengers.
+
+### Model: Family 400
+* **Description:** A compact RIB providing a secure and manageable platform for young families. Designed for simplicity and ease of use, the 400 features a wide deck for its size. The hull is optimized for lower horsepower, making it an economical choice for coastal day trips.
+* **Technical Specifications:**
+    * Length: 4.00 m
+    * User Profile: Entry-Level Family Boating
+    * Efficiency: Low-HP Optimized Hull
+
+### Model: Family 450
+* **Description:** Offers more internal volume and a more robust console, allowing for longer durations on the water. Provides a balance between the portability of the 400 and the sea-keeping abilities of the larger 550, featuring enhanced storage capacity for beach and snorkeling equipment.
+* **Technical Specifications:**
+    * Length: 4.50 m
+    * Deck Configuration: Expanded Storage Lockers
+    * Capacity: Enhanced Passenger Space
+
+### Model: Family 550
+* **Description:** A true offshore-capable family boat, engineered to handle significant wave action while keeping passengers dry. Often the preferred choice for families who enjoy exploring distant coves. Features an integrated fuel tank and a console large enough to house a modern navigation suite.
+* **Technical Specifications:**
+    * Length: 5.50 m
+    * Range: Integrated Long-Range Fuel Tank
+    * Hull: Deep-V Coastal Entry
+
+### Model: Family 600
+* **Description:** Emphasizes social ergonomics, with dedicated seating areas at both the bow and the stern. Features a large bow sun-pad and a protective stern seating arrangement. The engineering focus is on providing a stable platform at anchor for swimming and socializing.
+* **Technical Specifications:**
+    * Length: 6.00 m
+    * Social Area: Dual Sun-Pad/Seating Layout
+    * Stability: High Static Buoyancy
+
+### Model: Family 650
+* **Description:** The premier model of the leisure-focused range, offering the space and comfort of a large cruiser with the handling of a RIB. Designed for large groups, with a hull that can carry significant weight without losing its planing efficiency. It represents the pinnacle of "passive safety" engineering in the leisure segment.
+* **Technical Specifications:**
+    * Length: 6.50 m
+    * Capacity: Maximum Class Passenger Load
+    * Standards: Premium Family Outfitting
+
+---
+
+## Category: Offshore
+* **Habitability:** Professional Blue-Water Resilience and Operational Comfort.
+* **Overview:** Built for high-performance open-water operations. These hulls feature a deep-V architecture with a sharp deadrise angle, specifically designed to maintain stability and speed in rough sea states. Habitability is focused on "operational comfort"—ensuring the crew remains secure, dry, and minimally fatigued during long transits in adverse conditions.
+
+### Model: Offshore 451
+* **Description:** The most compact of the professional-grade hulls, serving as a rugged utility or safety boat. Engineered with reinforced GRP and oversized tubes. Its primary mission is reliability in coastal work environments where durability is the highest priority.
+* **Technical Specifications:**
+    * Length: 4.51 m
+    * Duty Cycle: Heavy-Duty Professional
+    * Hull Type: Deep-V Interceptor Entry
+
+### Model: Offshore 501
+* **Description:** The benchmark for the series, balancing manageable dimensions with significant rough-water capability. Designed for high-response handling, with weight distributed low and centrally to optimize the center of gravity, which is critical for maintaining stability during high-speed maneuvers in heavy swells.
+* **Technical Specifications:**
+    * Total Length: 5.00 m
+    * Total Width: 2.30 m
+    * Internal Length: 3.35 m
+    * Internal Width: 1.19 m
+    * Tube Diameter: 0.55 m
+    * Air Chambers: 5
+    * Passenger Capacity: 7
+    * Weight (Std Equipment): 340 kg
+    * Max Horsepower: 115 HP
+    * Recommended HP: 90 HP
+
+### Model: Offshore 541
+* **Description:** Provides an expanded deck area for professional gear, making it ideal for technical diving or search operations. Features a reinforced deck structure capable of supporting heavy loads, such as dive tanks or technical equipment, without compromising the vessel’s trim.
+* **Technical Specifications:**
+    * Length: 5.41 m
+    * Deck Type: Cargo/Technical Reinforced
+    * Buoyancy: Oversized Tube Diameter
+
+### Model: Offshore 581
+* **Description:** Optimized for high-speed offshore tracking, utilizing a hull that "grips" the water during aggressive turns. Designed for users who need to cover long distances rapidly in unprotected waters. Hull strakes are tuned to provide maximum lift and minimal drag.
+* **Technical Specifications:**
+    * Length: 5.81 m
+    * Tracking: Precision Hydrodynamic Strakes
+    * Category: Professional High-Speed
+
+### Model: Offshore 621
+* **Description:** The flagship of the Offshore series, providing the highest level of sea-keeping and autonomy in the professional range. Designed for long-range missions, featuring a large fuel capacity and a hull capable of bridging large wave gaps, providing a stable platform for professional mariners in the most demanding conditions.
+* **Technical Specifications:**
+    * Length: 6.21 m
+    * Mission: Long-Range Offshore Autonomy
+    * Capacity: Professional Crew and Equipment
+
+---
+
+## Category: Pleasure
+* **Habitability:** Entry-Level Recreational and Beach-Hopping.
+* **Overview:** Designed for ease of use, light weight, and efficient operation. Perfect for new boaters or those who prioritize simple beach-hopping and coastal exploration. Habitability is straightforward, focusing on easy water access and a clear deck.
+
+### Model: Pleasure 320
+* **Description:** A compact runabout featuring high-quality hypalon construction. Standard equipment includes oars, rowlocks, handles, a pump, and a repair kit. Designed with three independent air chambers to ensure safety during coastal transits.
+* **Technical Specifications:**
+    * Total Length: 3.20 m
+    * Total Width: 1.56 m
+    * Internal Length: 2.30 m
+    * Internal Width: 0.77 m
+    * Tube Diameter: 0.42 m
+    * Air Chambers: 3
+    * Passenger Capacity: 4
+    * Weight (Std Equipment): 75 kg
+    * Max Horsepower: 25 HP
+
+### Model: Pleasure 360
+* **Description:** Provides a wider beam and larger tube diameter for increased stability and a drier ride. A popular choice for four adults, offering enough buoyancy to handle coastal "chop" while remaining light enough for easy trailering.
+* **Technical Specifications:**
+    * Total Length: 3.60 m
+    * Total Width: 1.70 m
+    * Internal Length: 2.70 m
+    * Internal Width: 0.80 m
+    * Tube Diameter: 0.48 m
+    * Air Chambers: 3
+    * Passenger Capacity: 4
+    * Weight (Std Equipment): 90 kg
+    * Max Horsepower: 30 HP
+
+### Model: Pleasure 400
+* **Description:** A robust recreational RIB with a significantly higher mass than the smaller models, translating to a more "planted" feel in the water. With a weight of 180kg, the 400 features a thicker GRP layup and is rated for 6 passengers, making it a highly capable family ferry or recreational platform.
+* **Technical Specifications:**
+    * Total Length: 4.00 m
+    * Total Width: 1.88 m
+    * Internal Length: 3.20 m
+    * Internal Width: 0.78 m
+    * Tube Diameter: 0.48 m
+    * Air Chambers: 3
+    * Passenger Capacity: 6
+    * Weight (Std Equipment): 180 kg
+    * Max Horsepower: 40 HP
+
+### Model: Pleasure 430
+* **Description:** The largest Pleasure model, offering the best sea-keeping in its category while maintaining the series' focus on simplicity. Designed for extended beach trips, providing the space and power needed to explore more distant coastal regions with a full crew and gear.
+* **Technical Specifications:**
+    * Length: 4.30 m
+    * Intent: Extended Recreational Use
+    * Platform: High-Stability Pleasure Hull
+
+---
+
+## Category: Tender
+* **Habitability:** Yacht Support and Shore-to-Ship Transit.
+* **Overview:** Specialized for support roles. Designed with specific weight and dimension constraints to fit yacht davits and garages. Includes both Monohull (rigid) and RIB (inflatable collar) designs to meet different storage and performance needs.
+
+### Model: Tender 200 Monohull
+* **Description:** An ultra-lightweight rigid tender for small sailing yachts where storage space is at a premium.
+* **Technical Specifications:**
+    * Type: Rigid Monohull
+    * Compatibility: Small Sailing Yachts
+
+### Model: Tender 245 Monohull
+* **Description:** A rigid-hull tender providing increased tracking and rowing efficiency for two to three passengers.
+* **Technical Specifications:**
+    * Type: Rigid Monohull
+    * Capacity: 2-3 Passengers
+
+### Model: Tender 250 Monohull
+* **Description:** A versatile rigid tender capable of handling small outboard engines for reliable shore transit.
+* **Technical Specifications:**
+    * Type: Rigid Monohull
+    * Propulsion: Small Outboard Compatible
+
+### Model: Tender 280 Monohull
+* **Description:** The largest of the rigid tenders, offering high durability for use on rugged or rocky coastlines.
+* **Technical Specifications:**
+    * Type: Rigid Monohull
+    * Durability: Rugged Coastline Optimized
+
+### Model: Tender 289 RIB
+* **Description:** Combines a rigid GRP floor with inflatable tubes, providing the highest stability and mother-ship protection. Standard equipment includes oars, handles, a pump, and a repair kit. The peripheral fender protects the yacht's hull during boarding, making it the preferred choice for larger motor yachts requiring a high-stability tender.
+* **Technical Specifications:**
+    * Type: Rigid Inflatable Boat (RIB)
+    * Standard Gear: Oars, Pump, Repair Kit
+    * Protection: Peripheral Elastic Fender
+    * Compatibility: Yacht Davit and Garage Optimized
+
+---
+
+## Category: Top Gun
+* **Habitability:** Elite Performance and Executive Comfort.
+* **Overview:** Represents Mostro’s pinnacle of high-speed luxury. Designed for the "Executive" market, where extreme speed must be balanced with sophisticated habitability and premium finishes.
+
+### Model: Top Gun 864
+* **Description:** A high-speed, 8.6-meter cruiser designed for rapid island-hopping with a focus on pilot ergonomics and high-velocity stability.
+* **Technical Specifications:**
+    * Length: 8.60 m
+    * Intent: Rapid Island-Hopping
+    * Ergonomics: High-Velocity Pilot Focus
+
+### Model: Top Gun 964
+* **Description:** The flagship performance cruiser, offering twin-engine capability and maximum deck space for luxury social entertaining at high speeds.
+* **Technical Specifications:**
+    * Length: 9.64 m
+    * Propulsion: Twin-Engine Capable
+    * Layout: Maximum Deck Space for Socializing
+
+---
+
+## Category: Top Gun Shark
+* **Habitability:** Specialist Tactical and Endurance Performance.
+* **Overview:** A single-model, specialized variant of the Top Gun line. Designed for extreme endurance and professional-grade performance in the most hostile maritime environments.
+
+### Model: Top Gun Shark
+* **Description:** A specialist model featuring reinforced construction and a tactical deck layout, optimized for high-speed endurance and professional interceptor roles.
+* **Technical Specifications:**
+    * Construction: Tactical Reinforcement
+    * Role: Professional Endurance / Interceptor
+    * Environment: Hostile Maritime Conditions
+
+---
+
+## Category: Sport
+* **Habitability:** Active Athleticism and Water Sports Versatility.
+* **Overview:** The Sport series is designed for dynamic recreation. These boats are engineered to be agile, creating clean wakes for water sports while providing a secure environment for high-speed exploration. The range follows a progression of increasing hull mass and engine capacity.
+
+### Model: Sport 460
+* **Description:** An agile "playboat" model engineered for dynamic recreation and water sports.
+* **Technical Specifications:**
+    * Primary Use: Water Sports / Agility
+    * Hull Type: Deep-V Sport
+    * Capacity: 4-6 Persons
+
+### Model: Sport 500
+* **Description:** A versatile model engineered for agility, dynamic recreation, and water sports.
+* **Technical Specifications:**
+    * Primary Use: Water Sports / Agility
+    * Hull Type: Deep-V Sport
+    * Capacity: 4-6 Persons
+
+### Model: Sport 550
+* **Description:** A capable mid-sized model engineered for dynamic recreation and towing capability.
+* **Technical Specifications:**
+    * Primary Use: Water Sports / Agility
+    * Hull Type: Deep-V Sport
+    * Capacity: 4-6 Persons
+
+### Model: Sport 600
+* **Description:** Engineered for agility and high-speed exploration, creating a secure environment for dynamic recreation.
+* **Technical Specifications:**
+    * Primary Use: Water Sports / Agility
+    * Hull Type: Deep-V Sport
+    * Capacity: 4-6 Persons
+
+### Model: Sport 700
+* **Description:** Serves as a high-speed performance cruiser capable of handling offshore sea states with a full athletic crew.
+* **Technical Specifications:**
+    * Primary Use: Performance Cruising
+    * Hull Type: Reinforced Offshore Sport
+    * Capacity: 8-12 Persons
+
+### Model: Sport 800
+* **Description:** A larger high-speed performance cruiser capable of handling offshore sea states with a full athletic crew and increased comfort.
+* **Technical Specifications:**
+    * Primary Use: Performance Cruising
+    * Hull Type: Reinforced Offshore Sport
+    * Capacity: 8-12 Persons
+
+### Model: Sport 900
+* **Description:** The largest model in the Sport range, serving as a high-speed performance cruiser capable of handling offshore sea states with a full athletic crew.
+* **Technical Specifications:**
+    * Primary Use: Performance Cruising
+    * Hull Type: Reinforced Offshore Sport
+    * Capacity: 8-12 Persons

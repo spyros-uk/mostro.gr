@@ -84,6 +84,12 @@ export function BoatsSection() {
   }, [filtersHydrated, selectedCategory, lengthRange, lengthManual]);
 
   const handleCategoryChange = (cat: BoatCategory | 'all') => {
+    if (cat !== 'all' && cat === selectedCategory) {
+      setSelectedCategory('all');
+      setLengthRange(SLIDER_LENGTH_GLOBAL);
+      setLengthManual(false);
+      return;
+    }
     setSelectedCategory(cat);
     if (cat === 'all') {
       setLengthRange(SLIDER_LENGTH_GLOBAL);
@@ -97,7 +103,9 @@ export function BoatsSection() {
 
   const handleLengthChange = (range: [number, number]) => {
     setLengthRange(range);
-    setLengthManual(true);
+    const [gMin, gMax] = SLIDER_LENGTH_GLOBAL;
+    const isFullRange = range[0] === gMin && range[1] === gMax;
+    setLengthManual(!isFullRange);
   };
 
   const filteredBoats = useMemo(() => {

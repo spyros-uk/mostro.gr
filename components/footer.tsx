@@ -8,6 +8,7 @@ const authorCreditFont = Cormorant_Garamond({
   weight: ['500', '600'],
   style: ['italic'],
   display: 'swap',
+  preload: false,
 });
 
 export function Footer() {
@@ -33,7 +34,7 @@ export function Footer() {
 
           {/* Col 2: Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <h2 className="text-base font-semibold mb-4">Quick Links</h2>
             <ul className="space-y-2 text-background/70">
               <li>
                 <Link href="#boats" className="hover:text-background transition-colors">
@@ -55,7 +56,7 @@ export function Footer() {
 
           {/* Col 3: Model series */}
           <div>
-            <h4 className="font-semibold mb-4">Model Series</h4>
+            <h2 className="text-base font-semibold mb-4">Model Series</h2>
             <ul className="space-y-2 text-background/70 text-sm">
               <li className="flex flex-wrap gap-x-3 gap-y-1">
                 <Link href="#boats" className="hover:text-background transition-colors">Tender</Link>
@@ -80,7 +81,7 @@ export function Footer() {
 
           {/* Col 4: Contact */}
           <div>
-            <h4 className="font-semibold mb-4">Contact</h4>
+            <h2 className="text-base font-semibold mb-4">Contact</h2>
             <div className="space-y-3 text-sm text-background/80">
               <a
                 href={SITE_CONTACT.mapsUrl}

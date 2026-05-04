@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { boats, getBoatBySlug, getRelatedBoats, categories } from '@/lib/boats';
+import { jpegPathToWebp } from '@/lib/image-webp';
 import { ImageGallery } from '@/components/image-gallery';
 import { SocialShare } from '@/components/social-share';
 import { Badge } from '@/components/ui/badge';
@@ -19,7 +20,6 @@ import {
   Anchor,
   ArrowRight
 } from 'lucide-react';
-import Image from 'next/image';
 
 interface BoatPageProps {
   params: Promise<{ slug: string }>;
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: BoatPageProps): Promise<Metad
     openGraph: {
       title: `${boat.name} | Mostro RIBs`,
       description: boat.description,
-      images: [boat.image],
+      images: [jpegPathToWebp(boat.image)],
     },
   };
 }
@@ -64,7 +64,7 @@ export default async function BoatPage({ params }: BoatPageProps) {
   const categoryLabel = categories.find((c) => c.value === boat.category)?.label;
   
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://mostro.gr';
-  const boatUrl = `${baseUrl}/boats/${boat.slug}`;
+  const boatUrl = `${baseUrl}/boats/${boat.slug}/`;
 
   return (
     <main className="min-h-screen bg-background">
@@ -209,15 +209,23 @@ export default async function BoatPage({ params }: BoatPageProps) {
             <h2 className="text-2xl font-bold mb-6">More from {categoryLabel} Series</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedBoats.map((relatedBoat) => (
-                <Link key={relatedBoat.id} href={`/boats/${relatedBoat.slug}`}>
+                <Link key={relatedBoat.id} href={`/boats/${relatedBoat.slug}/`} prefetch={false}>
                   <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                     <div className="relative aspect-[4/3] overflow-hidden">
-                      <Image
-                        src={relatedBoat.image}
-                        alt={relatedBoat.name}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
+                      <picture className="absolute inset-0 block h-full w-full">
+                        <source srcSet={jpegPathToWebp(relatedBoat.image)} type="image/webp" />
+                        <img
+                          src={relatedBoat.image}
+                          alt={relatedBoat.name}
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          width={800}
+                          height={600}
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          loading="lazy"
+                          decoding="async"
+                          fetchPriority="low"
+                        />
+                      </picture>
                       <div className="absolute top-3 right-3">
                         <Badge className="bg-accent text-accent-foreground">
                           {relatedBoat.length}m

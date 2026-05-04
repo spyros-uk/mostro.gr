@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
@@ -6,19 +5,27 @@ import { ChevronDown } from 'lucide-react';
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
       <div className="absolute inset-0">
-        <Image
-          src="/images/hero-boat.jpg"
-          alt="Sport Rigid Inflatable Boat cruising in the Mediterranean"
-          fill
-          className="object-cover"
-          priority
-        />
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcSet="/images/hero-boat-mobile.webp"
+            type="image/webp"
+          />
+          <source srcSet="/images/hero-boat.webp" type="image/webp" />
+          <img
+            src="/images/hero-boat.jpg"
+            alt="Sport Rigid Inflatable Boat cruising in the Mediterranean"
+            className="absolute inset-0 h-full w-full object-cover"
+            width={1920}
+            height={1280}
+            fetchPriority="high"
+            decoding="async"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-foreground/70" />
       </div>
 
-      {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-3xl mx-auto space-y-6">
           <p className="text-primary-foreground/80 text-sm md:text-base uppercase tracking-[0.3em] font-medium">
@@ -31,7 +38,7 @@ export function Hero() {
             Holidays at Sea
           </p>
           <p className="text-primary-foreground/70 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-            Discover our collection of 13 premium Sport Rigid Inflatable Boats, 
+            Discover our collection of 13 premium Sport Rigid Inflatable Boats,
             crafted for the Aegean Sea. From compact tenders to luxury cruisers.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -50,7 +57,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <Link href="#boats" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
           <ChevronDown className="w-8 h-8" />

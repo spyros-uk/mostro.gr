@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Award, Shield, Wrench, Heart } from 'lucide-react';
 
 const features = [
@@ -31,12 +30,19 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image */}
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-            <Image
-              src="/images/lifestyle.jpg"
-              alt="Family enjoying a day on a Mostro RIB"
-              fill
-              className="object-cover"
-            />
+            <picture className="absolute inset-0 block h-full w-full">
+              <source srcSet="/images/lifestyle.webp" type="image/webp" />
+              <img
+                src="/images/lifestyle.jpg"
+                alt="Family enjoying a day on a Mostro RIB"
+                className="h-full w-full object-cover"
+                width={1200}
+                height={900}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </div>
 
           {/* Content */}

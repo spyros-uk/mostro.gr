@@ -29,10 +29,15 @@ Open [http://localhost:3000](http://localhost:3000). Edit routes under `app/`, U
 | `npm run preview:static` | Serves **`out/`** only (run after `build`) |
 | `npm start` | Serves **`out/`** (same as `preview:static`; there is no `next start` for static export) |
 | `npm run lint` | ESLint |
+| `npm run optimize:images` | Regenerate **`.webp`** files from JPEGs in `public/images/` (uses **sharp**; run after adding or changing JPEGs) |
+
+## Image assets
+
+The UI prefers **WebP** with JPEG fallback (`<picture>`). JPEGs in `public/images/` should have matching **`.webp`** siblings (see `lib/image-webp.ts` and `scripts/optimize-public-images.mjs`). After you add or replace a `.jpg`, run **`npm run optimize:images`** before **`npm run build`** so Lighthouse and mobile LCP stay fast.
 
 ## Static export and S3
 
-This project uses Next.js **`output: 'export'`** and **`trailingSlash: true`** (see `next.config.mjs`):
+This project uses Next.js **`output: 'export'`** and **`trailingSlash: true`** (see `next.config.mjs`). **`experimental.inlineCss`** inlines CSS in production HTML so the first load avoids several render-blocking stylesheet requests; it does **not** apply to **`next dev`**—use **`npm run preview`** to audit like production.
 
 - **`out/`** is the folder to upload to your bucket (website root).
 - Trailing slashes map cleanly to S3-style paths (`/boats/my-boat/` → `boats/my-boat/index.html`).

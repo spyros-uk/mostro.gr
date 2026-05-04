@@ -1,8 +1,8 @@
 'use client';
 
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { jpegPathToWebp } from '@/lib/image-webp';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -14,6 +14,35 @@ import {
 interface ImageGalleryProps {
   images: string[];
   alt: string;
+}
+
+function SlidePicture({
+  jpeg,
+  alt,
+  objectClass,
+  priority,
+}: {
+  jpeg: string;
+  alt: string;
+  objectClass: 'object-cover' | 'object-contain';
+  priority?: boolean;
+}) {
+  const webp = jpegPathToWebp(jpeg);
+  return (
+    <picture className="absolute inset-0 block h-full w-full">
+      <source srcSet={webp} type="image/webp" />
+      <img
+        src={jpeg}
+        alt={alt}
+        className={cn('h-full w-full', objectClass)}
+        width={1600}
+        height={1000}
+        sizes="(max-width: 768px) 100vw, 50vw"
+        decoding="async"
+        fetchPriority={priority ? 'high' : 'low'}
+      />
+    </picture>
+  );
 }
 
 export function ImageGallery({ images, alt }: ImageGalleryProps) {
@@ -49,16 +78,13 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
     <div className="space-y-4">
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
         <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-muted group">
-          <Image
-            src={images[selectedIndex]}
+          <SlidePicture
+            jpeg={images[selectedIndex]}
             alt={`${alt} - Image ${selectedIndex + 1}`}
-            fill
-            className="object-cover"
+            objectClass="object-cover"
             priority
-            sizes="(max-width: 768px) 100vw, 50vw"
           />
 
-          {/* Desktop: open fullscreen on main image */}
           <button
             type="button"
             aria-label="View image full screen"
@@ -66,7 +92,6 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
             onClick={() => setLightboxOpen(true)}
           />
 
-          {/* Mobile: arrow navigation on the main image */}
           {images.length > 1 && (
             <>
               <Button
@@ -116,13 +141,10 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
 
           <div className="relative flex min-h-0 flex-1 items-center justify-center p-4 pt-14">
             <div className="relative h-full w-full max-h-[calc(100dvh-6rem)] max-w-[100vw]">
-              <Image
-                src={images[selectedIndex]}
+              <SlidePicture
+                jpeg={images[selectedIndex]}
                 alt={`${alt} - Image ${selectedIndex + 1}`}
-                fill
-                className="object-contain"
-                sizes="100vw"
-                priority
+                objectClass="object-contain"
               />
             </div>
 
@@ -156,7 +178,6 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
         </DialogContent>
       </Dialog>
 
-      {/* Thumbnails */}
       {images.length > 1 && (
         <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
           {images.map((image, index) => (
@@ -165,19 +186,26 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
               type="button"
               onClick={() => setSelectedIndex(index)}
               className={cn(
-                'relative h-16 w-20 shrink-0 overflow-hidden rounded-lg transition-all md:h-18 md:w-24',
+                'relative h-16 w-20 shrink-0 overflow-hidden rounded-lg transition-all md:h-20 md:w-24',
                 selectedIndex === index
                   ? 'ring-2 ring-primary ring-offset-2'
                   : 'opacity-70 hover:opacity-100',
               )}
               aria-label={`View image ${index + 1}`}
             >
-              <Image
-                src={image}
-                alt={`${alt} thumbnail ${index + 1}`}
-                fill
-                className="object-cover"
-              />
+              <picture className="absolute inset-0 block h-full w-full">
+                <source srcSet={jpegPathToWebp(image)} type="image/webp" />
+                <img
+                  src={image}
+                  alt={`${alt} thumbnail ${index + 1}`}
+                  className="h-full w-full object-cover"
+                  width={96}
+                  height={80}
+                  sizes="96px"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </button>
           ))}
         </div>

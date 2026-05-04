@@ -1,11 +1,11 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { type Boat, categories } from '@/lib/boats';
+import { jpegPathToWebp } from '@/lib/image-webp';
 import { Users, Gauge, ArrowRight } from 'lucide-react';
 
 interface BoatCardProps {
@@ -14,17 +14,26 @@ interface BoatCardProps {
 
 export function BoatCard({ boat }: BoatCardProps) {
   const categoryLabel = categories.find((c) => c.value === boat.category)?.label;
+  const webpSrc = jpegPathToWebp(boat.image);
 
   return (
     <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-      <Link href={`/boats/${boat.slug}`}>
+      <Link href={`/boats/${boat.slug}/`} prefetch={false}>
         <div className="relative aspect-[4/3] overflow-hidden">
-          <Image
-            src={boat.image}
-            alt={boat.name}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
-          />
+          <picture>
+            <source srcSet={webpSrc} type="image/webp" />
+            <img
+              src={boat.image}
+              alt={boat.name}
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              width={800}
+              height={600}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+            />
+          </picture>
           <div className="absolute top-3 left-3">
             <Badge variant="secondary" className="bg-background/90 backdrop-blur-sm">
               {categoryLabel}
@@ -39,7 +48,7 @@ export function BoatCard({ boat }: BoatCardProps) {
       </Link>
       <CardContent className="p-5 space-y-4">
         <div>
-          <Link href={`/boats/${boat.slug}`}>
+          <Link href={`/boats/${boat.slug}/`} prefetch={false}>
             <h3 className="text-lg font-semibold text-foreground hover:text-primary transition-colors">
               {boat.name}
             </h3>
@@ -48,7 +57,7 @@ export function BoatCard({ boat }: BoatCardProps) {
             {boat.description}
           </p>
         </div>
-        
+
         <div className="flex items-center gap-4 text-sm text-muted-foreground">
           <div className="flex items-center gap-1.5">
             <Users className="w-4 h-4" />
@@ -60,7 +69,7 @@ export function BoatCard({ boat }: BoatCardProps) {
           </div>
         </div>
 
-        <Link href={`/boats/${boat.slug}`}>
+        <Link href={`/boats/${boat.slug}/`} prefetch={false}>
           <Button
             variant="ghost"
             className="w-full justify-between group/btn hover:bg-primary hover:text-primary-foreground"

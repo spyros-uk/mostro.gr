@@ -1,7 +1,6 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Anchor } from 'lucide-react';
 import { SITE_NAV_LINKS } from '@/lib/site-nav';
 import {
@@ -12,12 +11,12 @@ import { Button } from '@/components/ui/button';
 import { HeaderMobileSheet } from '@/components/header-mobile-sheet';
 
 export function Header() {
-  const pathname = usePathname();
-  const router = useRouter();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    if (pathname === '/') {
+    if (location.pathname === '/') {
       try {
         sessionStorage.removeItem(RESET_BOAT_FILTERS_SESSION_KEY);
       } catch {
@@ -31,7 +30,7 @@ export function Header() {
       } catch {
         /* ignore */
       }
-      router.push('/');
+      navigate('/');
     }
   };
 
@@ -40,7 +39,7 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link
-            href="/"
+            to="/"
             onClick={handleLogoClick}
             className="flex items-center gap-2 group"
           >
@@ -56,14 +55,14 @@ export function Header() {
             {SITE_NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
-                href={link.href}
+                to={`/${link.href}`}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
               </Link>
             ))}
             <Button asChild>
-              <Link href="#contact">Get a Quote</Link>
+              <Link to="/#contact">Get a Quote</Link>
             </Button>
           </nav>
 

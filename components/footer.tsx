@@ -1,15 +1,6 @@
-import Link from 'next/link';
-import { Cormorant_Garamond } from 'next/font/google';
+import { Link } from 'react-router-dom';
 import { Anchor, MapPin, Phone, Mail } from 'lucide-react';
 import { SITE_CONTACT } from '@/lib/site-contact';
-
-const authorCreditFont = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['500', '600'],
-  style: ['italic'],
-  display: 'swap',
-  preload: false,
-});
 
 export function Footer() {
   return (
@@ -18,7 +9,7 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 gap-y-10 mb-8">
           {/* Col 1: Brand + description */}
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-4">
+            <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-full bg-background flex items-center justify-center">
                 <Anchor className="w-5 h-5 text-foreground" />
               </div>
@@ -37,17 +28,17 @@ export function Footer() {
             <h2 className="text-base font-semibold mb-4">Quick Links</h2>
             <ul className="space-y-2 text-background/70">
               <li>
-                <Link href="#boats" className="hover:text-background transition-colors">
+                <Link to="/#boats" className="hover:text-background transition-colors">
                   Our Boats
                 </Link>
               </li>
               <li>
-                <Link href="#about" className="hover:text-background transition-colors">
+                <Link to="/#about" className="hover:text-background transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-background transition-colors">
+                <Link to="/#contact" className="hover:text-background transition-colors">
                   Contact
                 </Link>
               </li>
@@ -59,22 +50,22 @@ export function Footer() {
             <h2 className="text-base font-semibold mb-4">Model Series</h2>
             <ul className="space-y-2 text-background/70 text-sm">
               <li className="flex flex-wrap gap-x-3 gap-y-1">
-                <Link href="#boats" className="hover:text-background transition-colors">Tender</Link>
-                <Link href="#boats" className="hover:text-background transition-colors">Sport</Link>
-                <Link href="#boats" className="hover:text-background transition-colors">Family</Link>
+                <Link to="/#boats" className="hover:text-background transition-colors">Tender</Link>
+                <Link to="/#boats" className="hover:text-background transition-colors">Sport</Link>
+                <Link to="/#boats" className="hover:text-background transition-colors">Family</Link>
               </li>
               <li className="flex flex-wrap gap-x-3 gap-y-1">
-                <Link href="#boats" className="hover:text-background transition-colors">Offshore</Link>
-                <Link href="#boats" className="hover:text-background transition-colors">Spirit</Link>
-                <Link href="#boats" className="hover:text-background transition-colors">Top Gun</Link>
+                <Link to="/#boats" className="hover:text-background transition-colors">Offshore</Link>
+                <Link to="/#boats" className="hover:text-background transition-colors">Spirit</Link>
+                <Link to="/#boats" className="hover:text-background transition-colors">Top Gun</Link>
               </li>
               <li className="flex flex-wrap gap-x-3 gap-y-1">
-                <Link href="#boats" className="hover:text-background transition-colors">Dolce Vita</Link>
-                <Link href="#boats" className="hover:text-background transition-colors">Vendetta</Link>
+                <Link to="/#boats" className="hover:text-background transition-colors">Dolce Vita</Link>
+                <Link to="/#boats" className="hover:text-background transition-colors">Vendetta</Link>
               </li>
               <li className="flex flex-wrap gap-x-3 gap-y-1">
-                <Link href="#boats" className="hover:text-background transition-colors">Cabin</Link>
-                <Link href="#boats" className="hover:text-background transition-colors">Corvette</Link>
+                <Link to="/#boats" className="hover:text-background transition-colors">Cabin</Link>
+                <Link to="/#boats" className="hover:text-background transition-colors">Corvette</Link>
               </li>
             </ul>
           </div>
@@ -144,15 +135,15 @@ export function Footer() {
             href="https://spyros.uk/"
             target="_blank"
             rel="noopener noreferrer"
-            className={`${authorCreditFont.className} text-[0.95rem] sm:text-base font-medium tracking-[0.04em] text-background/55 hover:text-background transition-colors text-center shrink-0`}
+            className="font-serif italic text-[0.95rem] sm:text-base font-medium tracking-[0.04em] text-background/55 hover:text-background transition-colors text-center shrink-0"
           >
             Design & Development by Spyros Papaioannou
           </a>
           <div className="flex gap-6 text-sm text-background/50 w-full md:flex-1 justify-center md:justify-end">
-            <Link href="#" className="hover:text-background transition-colors">
+            <Link to="#" className="hover:text-background transition-colors">
               Privacy Policy
             </Link>
-            <Link href="#" className="hover:text-background transition-colors">
+            <Link to="#" className="hover:text-background transition-colors">
               Terms of Service
             </Link>
           </div>

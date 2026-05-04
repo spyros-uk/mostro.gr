@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -59,7 +58,7 @@ export function ContactSection() {
                   <br />
                   {SITE_CONTACT.addressLine2}
                 </p>
-                <Link
+                <a
                   href={SITE_CONTACT.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -67,7 +66,7 @@ export function ContactSection() {
                 >
                   View on Google Maps
                   <ExternalLink className="w-3.5 h-3.5" aria-hidden />
-                </Link>
+                </a>
               </div>
             </div>
 

@@ -1,6 +1,6 @@
 # mostro.gr
 
-Marketing site for **Mostro RIBs**—premium sport rigid inflatable boats. Built with [Next.js](https://nextjs.org/) (App Router), React 19, TypeScript, and Tailwind CSS v4. The production build is a **fully static** site suitable for hosting on AWS S3 (or any static file host) with no application server.
+Marketing site for **Mostro RIBs**—premium sport rigid inflatable boats. Built with **Vite + React 19 + TypeScript + React Router + Tailwind CSS v4**. The production build is static and can be hosted on S3/CloudFront or any static host.
 
 ## Requirements
 
@@ -22,12 +22,12 @@ Open [http://localhost:3000](http://localhost:3000). Edit routes under `app/`, U
 
 | Script | Description |
 |--------|-------------|
-| `npm run dev` | Development server with hot reload |
-| `npm run build` | Production build; with static export enabled, output is written to **`out/`** |
-| `npm run export` | Same as `build` (alias for static export workflows) |
-| `npm run preview` | Runs `next build`, then serves **`out/`** locally with [`serve`](https://github.com/vercel/serve) |
-| `npm run preview:static` | Serves **`out/`** only (run after `build`) |
-| `npm start` | Serves **`out/`** (same as `preview:static`; there is no `next start` for static export) |
+| `npm run dev` | Vite dev server with hot reload |
+| `npm run build` | Production build output in **`dist/`** |
+| `npm run export` | Same as `build` |
+| `npm run preview` | Build then preview **`dist/`** locally |
+| `npm run preview:static` | Preview **`dist/`** only |
+| `npm start` | Alias to Vite preview |
 | `npm run lint` | ESLint |
 | `npm run optimize:images` | Regenerate **`.webp`** files from JPEGs in `public/images/` (uses **sharp**; run after adding or changing JPEGs) |
 
@@ -35,19 +35,16 @@ Open [http://localhost:3000](http://localhost:3000). Edit routes under `app/`, U
 
 The UI prefers **WebP** with JPEG fallback (`<picture>`). JPEGs in `public/images/` should have matching **`.webp`** siblings (see `lib/image-webp.ts` and `scripts/optimize-public-images.mjs`). After you add or replace a `.jpg`, run **`npm run optimize:images`** before **`npm run build`** so Lighthouse and mobile LCP stay fast.
 
-## Static export and S3
+## Static hosting
 
-This project uses Next.js **`output: 'export'`** and **`trailingSlash: true`** (see `next.config.mjs`). **`experimental.inlineCss`** inlines CSS in production HTML so the first load avoids several render-blocking stylesheet requests; it does **not** apply to **`next dev`**—use **`npm run preview`** to audit like production.
-
-- **`out/`** is the folder to upload to your bucket (website root).
-- Trailing slashes map cleanly to S3-style paths (`/boats/my-boat/` → `boats/my-boat/index.html`).
-- Images use **`images.unoptimized: true`**, so no Next.js image optimization server is required.
+- Upload **`dist/`** to your static host (S3, CloudFront, Netlify, Cloudflare Pages, etc.).
+- For absolute social URLs, set `VITE_BASE_URL` at build time.
 
 Typical flow:
 
-1. Set **`NEXT_PUBLIC_BASE_URL`** to your public site URL for correct Open Graph and absolute URLs in metadata (see below).
+1. Set **`VITE_BASE_URL`** to your public site URL for correct absolute URLs in share metadata.
 2. Run **`npm run build`**.
-3. Sync **`out/`** to the S3 bucket (for example with the AWS CLI, `aws s3 sync out/ s3://your-bucket --delete`).
+3. Sync **`dist/`** to the S3 bucket (for example with the AWS CLI, `aws s3 sync dist/ s3://your-bucket --delete`).
 4. Enable **static website hosting** on the bucket and set the index document to **`index.html`**.
 5. For HTTPS, custom domains, and smoother URL handling, use **CloudFront** (or another CDN) in front of the bucket.
 
@@ -57,57 +54,40 @@ Typical flow:
 
 | Variable | When | Purpose |
 |----------|------|---------|
-| `NEXT_PUBLIC_BASE_URL` | Build (optional but recommended) | Canonical site URL, e.g. `https://mostro.gr`. Used as **`metadataBase`** in `app/layout.tsx` so Open Graph and Twitter metadata resolve absolute image URLs correctly. Defaults to `https://mostro.gr` if unset. |
+| `VITE_BASE_URL` | Build (optional but recommended) | Canonical site URL, e.g. `https://mostro.gr`, used when generating share URLs on boat detail pages. |
 
 Example for a staging build:
 
 ```bash
-NEXT_PUBLIC_BASE_URL=https://staging.example.com npm run build
+VITE_BASE_URL=https://staging.example.com npm run build
 ```
 
 ## Project layout
 
 | Path | Role |
 |------|------|
-| `app/` | Routes: home (`page.tsx`), boat detail (`boats/[slug]/page.tsx`), root layout and global CSS |
+| `src/` | Vite entry and routes (`src/main.tsx`, `src/App.tsx`, `src/pages/*`) |
 | `components/` | Page sections (hero, boats, contact, footer, etc.) and shared UI (`components/ui/`) |
 | `lib/boats.ts` | Boat catalog, categories, helpers (`getBoatBySlug`, etc.) |
 | `lib/site-contact.ts` | Address, phone, email, maps link, social URLs, hours |
 | `lib/boat-filters-storage.ts` | Client-side filter reset behavior (session storage + custom events) |
 | `public/` | Static assets referenced by URL path |
 
-Boat detail pages are generated at build time from `generateStaticParams` in `app/boats/[slug]/page.tsx`.
+Boat detail pages are rendered client-side via React Router (`/boats/:slug`) using the data in `lib/boats.ts`.
 
 ## Troubleshooting
 
-### “Next.js inferred your workspace root, but it may not be correct” (multiple lockfiles)
+### Vite dev server does not start
 
-If a **`package-lock.json`** (or other lockfile) exists in a **parent** directory of this repo, Turbopack may pick the wrong root. Options:
+Run `npm install` first, then `npm run dev` from this project root. If port `5173` is occupied, Vite will choose another available port automatically.
 
-- Remove or relocate the extra lockfile if it is not needed, **or**
-- Pin the project root in `next.config.mjs` (ESM):
+### Share links use localhost in production
 
-```js
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
-
-const projectRoot = path.dirname(fileURLToPath(import.meta.url))
-
-const nextConfig = {
-  turbopack: { root: projectRoot },
-  // …rest of config
-}
-```
-
-See [Turbopack `root`](https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory).
-
-### `metadataBase` / Open Graph warnings during build
-
-Ensure **`NEXT_PUBLIC_BASE_URL`** matches the URL where the site will be served, and run the build from **this** project folder so `app/layout.tsx` metadata is applied. Boat pages use relative image paths in Open Graph; they are resolved against `metadataBase`.
+Set `VITE_BASE_URL` in your build environment and rebuild, e.g. `VITE_BASE_URL=https://mostro.gr npm run build`.
 
 ### `npm start` fails or serves an empty site
 
-`npm start` serves the **`out/`** directory. Run **`npm run build`** first so `out/` exists.
+`npm start` serves the built **`dist/`** output. Run **`npm run build`** first so `dist/` exists.
 
 ## Docs
 

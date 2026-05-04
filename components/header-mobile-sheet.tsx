@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { Menu } from 'lucide-react';
 import { SITE_NAV_LINKS } from '@/lib/site-nav';
 import { Button } from '@/components/ui/button';
@@ -23,7 +23,7 @@ export function HeaderMobileSheet() {
           {SITE_NAV_LINKS.map((link) => (
             <Link
               key={link.href}
-              href={link.href}
+              to={`/${link.href}`}
               onClick={() => setOpen(false)}
               className="text-lg font-medium text-foreground hover:text-accent transition-colors"
             >
@@ -31,7 +31,7 @@ export function HeaderMobileSheet() {
             </Link>
           ))}
           <Button asChild className="mt-4">
-            <Link href="#contact" onClick={() => setOpen(false)}>
+            <Link to="/#contact" onClick={() => setOpen(false)}>
               Get a Quote
             </Link>
           </Button>

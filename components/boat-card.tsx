@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -18,7 +18,7 @@ export function BoatCard({ boat }: BoatCardProps) {
 
   return (
     <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-      <Link href={`/boats/${boat.slug}/`} prefetch={false}>
+      <Link to={`/boats/${boat.slug}/`}>
         <div className="relative aspect-[4/3] overflow-hidden">
           <picture>
             <source srcSet={webpSrc} type="image/webp" />
@@ -48,7 +48,7 @@ export function BoatCard({ boat }: BoatCardProps) {
       </Link>
       <CardContent className="p-5 space-y-4">
         <div>
-          <Link href={`/boats/${boat.slug}/`} prefetch={false}>
+          <Link to={`/boats/${boat.slug}/`}>
             <h3 className="text-lg font-semibold text-foreground hover:text-primary transition-colors">
               {boat.name}
             </h3>
@@ -69,7 +69,7 @@ export function BoatCard({ boat }: BoatCardProps) {
           </div>
         </div>
 
-        <Link href={`/boats/${boat.slug}/`} prefetch={false}>
+        <Link to={`/boats/${boat.slug}/`}>
           <Button
             variant="ghost"
             className="w-full justify-between group/btn hover:bg-primary hover:text-primary-foreground"

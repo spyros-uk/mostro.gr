@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 
@@ -43,7 +43,7 @@ export function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button size="lg" asChild className="text-base">
-              <Link href="#boats">Explore Our Boats</Link>
+              <Link to="/#boats">Explore Our Boats</Link>
             </Button>
             <Button
               size="lg"
@@ -51,14 +51,14 @@ export function Hero() {
               asChild
               className="text-base bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
             >
-              <Link href="#contact">Contact Us</Link>
+              <Link to="/#contact">Contact Us</Link>
             </Button>
           </div>
         </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <Link href="#boats" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+        <Link to="/#boats" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
           <ChevronDown className="w-8 h-8" />
           <span className="sr-only">Scroll to boats</span>
         </Link>

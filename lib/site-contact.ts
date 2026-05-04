@@ -28,5 +28,5 @@ export const SITE_CONTACT: SiteContact = {
   facebookUrl:
     'https://www.facebook.com/people/Mostro-boats/100065199331991/',
   hoursSummary:
-    'Monday–Saturday: 9:00 a.m.–4:30 p.m. · Sunday closed.',
+    'Monday–Saturday: 9:00a.m. – 4:30p.m.',
 };

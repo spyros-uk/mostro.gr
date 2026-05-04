@@ -312,7 +312,7 @@ export const boats: Boat[] = [
     id: 'offshore-451',
     name: 'Offshore 451',
     slug: 'offshore-451',
-    length: 4.50,
+    length: 4.51,
     category: 'offshore',
     image: '/images/boat-4.jpg',
     gallery: ['/images/boat-4.jpg', '/images/hero-boat.jpg', '/images/lifestyle.jpg'],

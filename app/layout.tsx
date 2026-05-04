@@ -9,6 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://mostro.gr'),
   title: 'Mostro RIBs | Premium Sport Rigid Inflatable Boats in Greece',
   description: 'Discover our collection of 13 premium Sport Rigid Inflatable Boats (RIBs) from 2-11 meters. Experience the Aegean Sea with Mostro - Greece\'s leading RIB manufacturer.',
   keywords: 'RIB boats, rigid inflatable boats, sport boats, Greece boats, Mediterranean boats, Mostro',

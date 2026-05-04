@@ -1,14 +1,22 @@
 import Link from 'next/link';
+import { Cormorant_Garamond } from 'next/font/google';
 import { Anchor, MapPin, Phone, Mail } from 'lucide-react';
 import { SITE_CONTACT } from '@/lib/site-contact';
+
+const authorCreditFont = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['500', '600'],
+  style: ['italic'],
+  display: 'swap',
+});
 
 export function Footer() {
   return (
     <footer className="bg-foreground text-background py-12">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          {/* Brand */}
-          <div className="md:col-span-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 gap-y-10 mb-8">
+          {/* Col 1: Brand + description */}
+          <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-full bg-background flex items-center justify-center">
                 <Anchor className="w-5 h-5 text-foreground" />
@@ -17,11 +25,63 @@ export function Footer() {
                 mostro<span className="text-accent">.gr</span>
               </span>
             </Link>
-            <p className="text-background/70 max-w-sm leading-relaxed">
-              Premium Sport Rigid Inflatable Boats crafted in Greece for the
-              Mediterranean lifestyle. Experience the Aegean with Mostro.
+            <p className="text-background/70 leading-relaxed text-sm md:text-base">
+              Premium Sport Rigid Inflatable Boats crafted in Greece for the Mediterranean
+              lifestyle. Experience the Aegean with Mostro.
             </p>
-            <div className="mt-6 space-y-3 text-sm text-background/80 max-w-sm">
+          </div>
+
+          {/* Col 2: Quick Links */}
+          <div>
+            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2 text-background/70">
+              <li>
+                <Link href="#boats" className="hover:text-background transition-colors">
+                  Our Boats
+                </Link>
+              </li>
+              <li>
+                <Link href="#about" className="hover:text-background transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="#contact" className="hover:text-background transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 3: Model series */}
+          <div>
+            <h4 className="font-semibold mb-4">Model Series</h4>
+            <ul className="space-y-2 text-background/70 text-sm">
+              <li className="flex flex-wrap gap-x-3 gap-y-1">
+                <Link href="#boats" className="hover:text-background transition-colors">Tender</Link>
+                <Link href="#boats" className="hover:text-background transition-colors">Sport</Link>
+                <Link href="#boats" className="hover:text-background transition-colors">Family</Link>
+              </li>
+              <li className="flex flex-wrap gap-x-3 gap-y-1">
+                <Link href="#boats" className="hover:text-background transition-colors">Offshore</Link>
+                <Link href="#boats" className="hover:text-background transition-colors">Spirit</Link>
+                <Link href="#boats" className="hover:text-background transition-colors">Top Gun</Link>
+              </li>
+              <li className="flex flex-wrap gap-x-3 gap-y-1">
+                <Link href="#boats" className="hover:text-background transition-colors">Dolce Vita</Link>
+                <Link href="#boats" className="hover:text-background transition-colors">Vendetta</Link>
+              </li>
+              <li className="flex flex-wrap gap-x-3 gap-y-1">
+                <Link href="#boats" className="hover:text-background transition-colors">Cabin</Link>
+                <Link href="#boats" className="hover:text-background transition-colors">Corvette</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 4: Contact */}
+          <div>
+            <h4 className="font-semibold mb-4">Contact</h4>
+            <div className="space-y-3 text-sm text-background/80">
               <a
                 href={SITE_CONTACT.mapsUrl}
                 target="_blank"
@@ -29,24 +89,24 @@ export function Footer() {
                 className="flex gap-2 hover:text-background transition-colors"
               >
                 <MapPin className="w-4 h-4 shrink-0 mt-0.5" aria-hidden />
-                <span>
-                  {SITE_CONTACT.addressLine1}, {SITE_CONTACT.addressLine2}
-                </span>
+                <span>{SITE_CONTACT.addressShort}</span>
               </a>
-              <a
-                href={`tel:${SITE_CONTACT.phoneE164}`}
-                className="flex gap-2 items-center hover:text-background transition-colors"
-              >
-                <Phone className="w-4 h-4 shrink-0" aria-hidden />
-                {SITE_CONTACT.phoneDisplay}
-              </a>
-              <a
-                href={`mailto:${SITE_CONTACT.email}`}
-                className="flex gap-2 items-center hover:text-background transition-colors"
-              >
-                <Mail className="w-4 h-4 shrink-0" aria-hidden />
-                {SITE_CONTACT.email}
-              </a>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                <a
+                  href={`tel:${SITE_CONTACT.phoneE164}`}
+                  className="inline-flex gap-2 items-center shrink-0 hover:text-background transition-colors"
+                >
+                  <Phone className="w-4 h-4 shrink-0" aria-hidden />
+                  {SITE_CONTACT.phoneDisplay}
+                </a>
+                <a
+                  href={`mailto:${SITE_CONTACT.email}`}
+                  className="inline-flex gap-2 items-center min-w-0 hover:text-background transition-colors break-all"
+                >
+                  <Mail className="w-4 h-4 shrink-0" aria-hidden />
+                  {SITE_CONTACT.email}
+                </a>
+              </div>
             </div>
             <div className="mt-4 flex gap-3">
               <a
@@ -73,60 +133,21 @@ export function Footer() {
               </a>
             </div>
           </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-background/70">
-              <li>
-                <Link href="#boats" className="hover:text-background transition-colors">
-                  Our Boats
-                </Link>
-              </li>
-              <li>
-                <Link href="#about" className="hover:text-background transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="#contact" className="hover:text-background transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Boats */}
-          <div>
-            <h4 className="font-semibold mb-4">Model Series</h4>
-            <ul className="space-y-2 text-background/70 text-sm">
-              <li className="flex flex-wrap gap-x-3 gap-y-1">
-                <Link href="#boats" className="hover:text-background transition-colors">Tender</Link>
-                <Link href="#boats" className="hover:text-background transition-colors">Sport</Link>
-                <Link href="#boats" className="hover:text-background transition-colors">Family</Link>
-              </li>
-              <li className="flex flex-wrap gap-x-3 gap-y-1">
-                <Link href="#boats" className="hover:text-background transition-colors">Offshore</Link>
-                <Link href="#boats" className="hover:text-background transition-colors">Spirit</Link>
-                <Link href="#boats" className="hover:text-background transition-colors">Top Gun</Link>
-              </li>
-              <li className="flex flex-wrap gap-x-3 gap-y-1">
-                <Link href="#boats" className="hover:text-background transition-colors">Dolce Vita</Link>
-                <Link href="#boats" className="hover:text-background transition-colors">Vendetta</Link>
-              </li>
-              <li className="flex flex-wrap gap-x-3 gap-y-1">
-                <Link href="#boats" className="hover:text-background transition-colors">Cabin</Link>
-                <Link href="#boats" className="hover:text-background transition-colors">Convette</Link>
-              </li>
-            </ul>
-          </div>
         </div>
 
-        <div className="border-t border-background/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-background/50">
+        <div className="border-t border-background/20 pt-8 flex flex-col md:flex-row items-center gap-4 md:gap-6">
+          <p className="text-sm text-background/50 w-full md:flex-1 text-center md:text-left">
             &copy; {new Date().getFullYear()} Mostro.gr. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm text-background/50">
+          <a
+            href="https://spyros.uk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${authorCreditFont.className} text-[0.95rem] sm:text-base font-medium tracking-[0.04em] text-background/55 hover:text-background transition-colors text-center shrink-0`}
+          >
+            Design & Development by Spyros Papaioannou
+          </a>
+          <div className="flex gap-6 text-sm text-background/50 w-full md:flex-1 justify-center md:justify-end">
             <Link href="#" className="hover:text-background transition-colors">
               Privacy Policy
             </Link>

@@ -2,7 +2,12 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Anchor } from 'lucide-react';
+import { usePathname, useRouter } from 'next/navigation';
+import { Menu, Anchor } from 'lucide-react';
+import {
+  RESET_BOAT_FILTERS_EVENT,
+  RESET_BOAT_FILTERS_SESSION_KEY,
+} from '@/lib/boat-filters-storage';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
@@ -14,13 +19,39 @@ const navLinks = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    if (pathname === '/') {
+      try {
+        sessionStorage.removeItem(RESET_BOAT_FILTERS_SESSION_KEY);
+      } catch {
+        /* ignore */
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.dispatchEvent(new CustomEvent(RESET_BOAT_FILTERS_EVENT));
+    } else {
+      try {
+        sessionStorage.setItem(RESET_BOAT_FILTERS_SESSION_KEY, '1');
+      } catch {
+        /* ignore */
+      }
+      router.push('/');
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link
+            href="/"
+            onClick={handleLogoClick}
+            className="flex items-center gap-2 group"
+          >
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
               <Anchor className="w-5 h-5 text-primary-foreground" />
             </div>

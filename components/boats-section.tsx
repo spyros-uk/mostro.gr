@@ -1,10 +1,21 @@
 'use client';
 
-import { useState, useMemo } from 'react';
-import { boats, type BoatCategory } from '@/lib/boats';
+import { useState, useMemo, useEffect, useCallback } from 'react';
+import {
+  boats,
+  getSliderLengthRangeForCategory,
+  SLIDER_LENGTH_GLOBAL,
+  type BoatCategory,
+} from '@/lib/boats';
+import {
+  readStoredBoatFilters,
+  writeStoredBoatFilters,
+  RESET_BOAT_FILTERS_EVENT,
+  RESET_BOAT_FILTERS_SESSION_KEY,
+} from '@/lib/boat-filters-storage';
 import { BoatFilters } from './boat-filters';
 import { BoatCard } from './boat-card';
-import { SlidersHorizontal, X } from 'lucide-react';
+import { SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -16,8 +27,78 @@ import {
 
 export function BoatsSection() {
   const [selectedCategory, setSelectedCategory] = useState<BoatCategory | 'all'>('all');
-  const [lengthRange, setLengthRange] = useState<[number, number]>([2, 11]);
+  const [lengthRange, setLengthRange] = useState<[number, number]>(SLIDER_LENGTH_GLOBAL);
+  const [lengthManual, setLengthManual] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [filtersHydrated, setFiltersHydrated] = useState(false);
+
+  const resetFiltersToDefaults = useCallback(() => {
+    setSelectedCategory('all');
+    setLengthRange(SLIDER_LENGTH_GLOBAL);
+    setLengthManual(false);
+    setFiltersOpen(false);
+    writeStoredBoatFilters({
+      selectedCategory: 'all',
+      lengthRange: SLIDER_LENGTH_GLOBAL,
+      lengthManual: false,
+    });
+  }, []);
+
+  useEffect(() => {
+    if (
+      typeof window !== 'undefined' &&
+      sessionStorage.getItem(RESET_BOAT_FILTERS_SESSION_KEY) === '1'
+    ) {
+      sessionStorage.removeItem(RESET_BOAT_FILTERS_SESSION_KEY);
+      setSelectedCategory('all');
+      setLengthRange(SLIDER_LENGTH_GLOBAL);
+      setLengthManual(false);
+      setFiltersOpen(false);
+      writeStoredBoatFilters({
+        selectedCategory: 'all',
+        lengthRange: SLIDER_LENGTH_GLOBAL,
+        lengthManual: false,
+      });
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      setFiltersHydrated(true);
+      return;
+    }
+    const stored = readStoredBoatFilters();
+    if (stored) {
+      setSelectedCategory(stored.selectedCategory);
+      setLengthRange(stored.lengthRange);
+      setLengthManual(stored.lengthManual ?? false);
+    }
+    setFiltersHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    const onReset = () => resetFiltersToDefaults();
+    window.addEventListener(RESET_BOAT_FILTERS_EVENT, onReset);
+    return () => window.removeEventListener(RESET_BOAT_FILTERS_EVENT, onReset);
+  }, [resetFiltersToDefaults]);
+
+  useEffect(() => {
+    if (!filtersHydrated) return;
+    writeStoredBoatFilters({ selectedCategory, lengthRange, lengthManual });
+  }, [filtersHydrated, selectedCategory, lengthRange, lengthManual]);
+
+  const handleCategoryChange = (cat: BoatCategory | 'all') => {
+    setSelectedCategory(cat);
+    if (cat === 'all') {
+      setLengthRange(SLIDER_LENGTH_GLOBAL);
+      setLengthManual(false);
+      return;
+    }
+    if (!lengthManual) {
+      setLengthRange(getSliderLengthRangeForCategory(cat));
+    }
+  };
+
+  const handleLengthChange = (range: [number, number]) => {
+    setLengthRange(range);
+    setLengthManual(true);
+  };
 
   const filteredBoats = useMemo(() => {
     return boats.filter((boat) => {
@@ -27,12 +108,13 @@ export function BoatsSection() {
     });
   }, [selectedCategory, lengthRange]);
 
-  const hasActiveFilters = selectedCategory !== 'all' || lengthRange[0] !== 2 || lengthRange[1] !== 11;
+  const [globalMin, globalMax] = SLIDER_LENGTH_GLOBAL;
+  const hasActiveFilters =
+    selectedCategory !== 'all' ||
+    lengthRange[0] !== globalMin ||
+    lengthRange[1] !== globalMax;
 
-  const clearFilters = () => {
-    setSelectedCategory('all');
-    setLengthRange([2, 11]);
-  };
+  const clearFilters = resetFiltersToDefaults;
 
   return (
     <section id="boats" className="py-16 md:py-24 bg-background">
@@ -55,9 +137,12 @@ export function BoatsSection() {
         <div className="hidden md:block mb-10 p-6 bg-card rounded-xl border border-border">
           <BoatFilters
             selectedCategory={selectedCategory}
-            onCategoryChange={setSelectedCategory}
+            onCategoryChange={handleCategoryChange}
             lengthRange={lengthRange}
-            onLengthChange={setLengthRange}
+            onLengthChange={handleLengthChange}
+            showClearInFilters
+            hasActiveFilters={hasActiveFilters}
+            onClearAll={clearFilters}
           />
         </div>
 
@@ -90,11 +175,9 @@ export function BoatsSection() {
               <div className="mt-6 pr-2">
                 <BoatFilters
                   selectedCategory={selectedCategory}
-                  onCategoryChange={(cat) => {
-                    setSelectedCategory(cat);
-                  }}
+                  onCategoryChange={handleCategoryChange}
                   lengthRange={lengthRange}
-                  onLengthChange={setLengthRange}
+                  onLengthChange={handleLengthChange}
                 />
               </div>
               <div className="mt-8 pr-2">
@@ -107,16 +190,10 @@ export function BoatsSection() {
         </div>
 
         {/* Results Count - Desktop */}
-        <div className="hidden md:flex items-center justify-between mb-6">
+        <div className="hidden md:block mb-6">
           <p className="text-sm text-muted-foreground">
             Showing {filteredBoats.length} of {boats.length} boats
           </p>
-          {hasActiveFilters && (
-            <Button variant="ghost" size="sm" onClick={clearFilters} className="gap-2">
-              <X className="w-3 h-3" />
-              Clear filters
-            </Button>
-          )}
         </div>
 
         {/* Boat Grid */}

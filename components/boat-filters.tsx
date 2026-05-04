@@ -17,6 +17,10 @@ interface BoatFiltersProps {
   onCategoryChange: (category: BoatCategory | 'all') => void;
   lengthRange: [number, number];
   onLengthChange: (range: [number, number]) => void;
+  /** Desktop: show “Clear all” at the top of the filter block when filters are active */
+  showClearInFilters?: boolean;
+  hasActiveFilters?: boolean;
+  onClearAll?: () => void;
 }
 
 export function BoatFilters({
@@ -24,9 +28,20 @@ export function BoatFilters({
   onCategoryChange,
   lengthRange,
   onLengthChange,
+  showClearInFilters,
+  hasActiveFilters,
+  onClearAll,
 }: BoatFiltersProps) {
   return (
     <div className="space-y-6">
+      {showClearInFilters && hasActiveFilters && onClearAll && (
+        <div className="flex justify-end -mt-1">
+          <Button variant="ghost" size="sm" onClick={onClearAll} className="gap-2 -mr-2">
+            Clear all
+          </Button>
+        </div>
+      )}
+
       {/* Category Filter */}
       <div className="space-y-3">
         <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
@@ -79,19 +94,18 @@ export function BoatFilters({
 
       {/* Length Filter - Slider and Presets Side by Side */}
       <div className="space-y-3">
-        <div className="flex items-center justify-between">
-          <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+          <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider shrink-0">
             Length
           </h3>
-          <span className="text-sm font-medium text-foreground">
+          <span className="text-sm font-medium text-foreground tabular-nums">
             {lengthRange[0]}m - {lengthRange[1]}m
           </span>
         </div>
-        
-        {/* Side by side layout */}
-        <div className="flex items-center gap-4">
-          {/* Slider */}
-          <div className="flex-1 px-1">
+
+        {/* Slider uses half the row; presets sit beside it */}
+        <div className="flex flex-wrap items-start gap-4">
+          <div className="w-full md:w-1/2 min-w-[min(100%,12rem)] px-1">
             <Slider
               value={lengthRange}
               min={2}
@@ -105,7 +119,7 @@ export function BoatFilters({
               <span>11m</span>
             </div>
           </div>
-          
+
           {/* Quick Length Buttons */}
           <div className="flex flex-wrap gap-1.5 shrink-0">
             {[

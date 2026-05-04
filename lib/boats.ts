@@ -619,6 +619,38 @@ export const boats: Boat[] = [
   },
 ];
 
+/** Global length slider bounds (m), must match `BoatFilters` slider min/max. */
+export const SLIDER_LENGTH_GLOBAL: [number, number] = [2, 11];
+
+/**
+ * Slider range for a model series: shortest hull length floored to whole metres,
+ * longest ceiled to whole metres, clamped to {@link SLIDER_LENGTH_GLOBAL}.
+ * For `"all"`, returns the global range.
+ */
+export function getSliderLengthRangeForCategory(
+  category: BoatCategory | 'all',
+): [number, number] {
+  if (category === 'all') return SLIDER_LENGTH_GLOBAL;
+  const inCategory = boats.filter((b) => b.category === category);
+  if (inCategory.length === 0) return SLIDER_LENGTH_GLOBAL;
+  const minLen = Math.min(...inCategory.map((b) => b.length));
+  const maxLen = Math.max(...inCategory.map((b) => b.length));
+  const [gMin, gMax] = SLIDER_LENGTH_GLOBAL;
+  const minSlider = Math.max(gMin, Math.min(gMax, Math.floor(minLen)));
+  const maxSlider = Math.max(gMin, Math.min(gMax, Math.ceil(maxLen)));
+  if (minSlider > maxSlider) return SLIDER_LENGTH_GLOBAL;
+  return [minSlider, maxSlider];
+}
+
+/** True when the stored length range differs from the auto range for the category. */
+export function inferLengthFilterManual(
+  category: BoatCategory | 'all',
+  lengthRange: [number, number],
+): boolean {
+  const [a0, a1] = getSliderLengthRangeForCategory(category);
+  return lengthRange[0] !== a0 || lengthRange[1] !== a1;
+}
+
 export const lengthRanges = [
   { min: 2, max: 4, label: '2-4m' },
   { min: 4, max: 6, label: '4-6m' },

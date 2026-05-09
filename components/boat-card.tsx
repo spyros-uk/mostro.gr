@@ -1,11 +1,13 @@
 'use client';
 
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { type Boat, categories } from '@/lib/boats';
+import { type Boat } from '@/lib/boats';
 import { jpegPathToWebp } from '@/lib/image-webp';
+import { useLocalizedBoat } from '@/hooks/use-localized-boat';
 import { Users, Gauge, ArrowRight } from 'lucide-react';
 
 interface BoatCardProps {
@@ -13,18 +15,19 @@ interface BoatCardProps {
 }
 
 export function BoatCard({ boat }: BoatCardProps) {
-  const categoryLabel = categories.find((c) => c.value === boat.category)?.label;
+  const { t } = useTranslation();
+  const b = useLocalizedBoat(boat);
   const webpSrc = jpegPathToWebp(boat.image);
 
   return (
     <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-      <Link to={`/boats/${boat.slug}/`}>
+      <Link to={`/boats/${b.slug}/`}>
         <div className="relative aspect-[4/3] overflow-hidden">
           <picture>
             <source srcSet={webpSrc} type="image/webp" />
             <img
               src={boat.image}
-              alt={boat.name}
+              alt={b.name}
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               width={800}
               height={600}
@@ -36,45 +39,45 @@ export function BoatCard({ boat }: BoatCardProps) {
           </picture>
           <div className="absolute top-3 left-3">
             <Badge variant="secondary" className="bg-background/90 backdrop-blur-sm">
-              {categoryLabel}
+              {b.categoryLabel}
             </Badge>
           </div>
           <div className="absolute top-3 right-3">
             <Badge className="bg-accent text-accent-foreground">
-              {boat.length}m
+              {b.length}m
             </Badge>
           </div>
         </div>
       </Link>
       <CardContent className="p-5 space-y-4">
         <div>
-          <Link to={`/boats/${boat.slug}/`}>
+          <Link to={`/boats/${b.slug}/`}>
             <h3 className="text-lg font-semibold text-foreground hover:text-primary transition-colors">
-              {boat.name}
+              {b.name}
             </h3>
           </Link>
           <p className="text-sm text-muted-foreground line-clamp-2 mt-1">
-            {boat.description}
+            {b.description}
           </p>
         </div>
 
         <div className="flex items-center gap-4 text-sm text-muted-foreground">
           <div className="flex items-center gap-1.5">
             <Users className="w-4 h-4" />
-            <span>{boat.passengers} passengers</span>
+            <span>{t('boatCard.passengers', { count: b.passengers })}</span>
           </div>
           <div className="flex items-center gap-1.5">
             <Gauge className="w-4 h-4" />
-            <span>{boat.engine}</span>
+            <span>{b.engine}</span>
           </div>
         </div>
 
-        <Link to={`/boats/${boat.slug}/`}>
+        <Link to={`/boats/${b.slug}/`}>
           <Button
             variant="ghost"
             className="w-full justify-between group/btn hover:bg-primary hover:text-primary-foreground"
           >
-            <span>View Details</span>
+            <span>{t('boatCard.viewDetails')}</span>
             <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
           </Button>
         </Link>

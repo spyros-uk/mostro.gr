@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Facebook, Twitter, Linkedin, Link2, Check } from 'lucide-react';
 import { useState } from 'react';
@@ -47,13 +48,13 @@ export function SocialShare({ url, title, description }: SocialShareProps) {
 
   return (
     <div className="flex items-center gap-2">
-      <span className="text-sm text-muted-foreground mr-1">Share:</span>
+      <span className="text-sm text-muted-foreground mr-1">{t('socialShare.label')}</span>
       <Button
         variant="outline"
         size="icon"
         className="h-9 w-9"
         onClick={() => openShareWindow(shareLinks.facebook)}
-        aria-label="Share on Facebook"
+        aria-label={t('socialShare.facebook')}
       >
         <Facebook className="h-4 w-4" />
       </Button>
@@ -62,7 +63,7 @@ export function SocialShare({ url, title, description }: SocialShareProps) {
         size="icon"
         className="h-9 w-9"
         onClick={() => openShareWindow(shareLinks.twitter)}
-        aria-label="Share on X (Twitter)"
+        aria-label={t('socialShare.twitter')}
       >
         <Twitter className="h-4 w-4" />
       </Button>
@@ -71,7 +72,7 @@ export function SocialShare({ url, title, description }: SocialShareProps) {
         size="icon"
         className="h-9 w-9"
         onClick={() => openShareWindow(shareLinks.linkedin)}
-        aria-label="Share on LinkedIn"
+        aria-label={t('socialShare.linkedin')}
       >
         <Linkedin className="h-4 w-4" />
       </Button>
@@ -80,7 +81,7 @@ export function SocialShare({ url, title, description }: SocialShareProps) {
         size="icon"
         className="h-9 w-9"
         onClick={copyToClipboard}
-        aria-label="Copy link"
+        aria-label={t('socialShare.copy')}
       >
         {copied ? <Check className="h-4 w-4 text-green-600" /> : <Link2 className="h-4 w-4" />}
       </Button>

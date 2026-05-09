@@ -1,11 +1,17 @@
+'use client';
+
+import { useTranslation } from 'react-i18next';
+
 /** Lightweight placeholders while below-the-fold client sections load. */
 export function BoatsSectionSkeleton() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="boats"
       className="py-16 md:py-24 bg-background"
       aria-busy="true"
-      aria-label="Loading boat collection"
+      aria-label={t('boatsSection.loadingBoatsAria')}
     >
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-12 max-w-2xl space-y-3 text-center">
@@ -33,12 +39,14 @@ export function BoatsSectionSkeleton() {
 }
 
 export function ContactSectionSkeleton() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="contact"
       className="min-h-[520px] py-16 md:py-24 bg-background"
       aria-busy="true"
-      aria-label="Loading contact section"
+      aria-label={t('contact.loadingContactAria')}
     >
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-12 max-w-2xl space-y-3 text-center">

@@ -1,0 +1,185 @@
+{
+  "language": {
+    "switcherAria": "Γλώσσα"
+  },
+  "nav": {
+    "boats": "Σκάφη",
+    "about": "Σχετικά",
+    "contact": "Επικοινωνία",
+    "quote": "Ζητήστε προσφορά"
+  },
+  "hero": {
+    "tagline": "Υψηλής ποιότητας RIB από το 2005",
+    "title": "Ζήστε την εμπειρία",
+    "subtitle": "Διακοπές στη θάλασσα",
+    "body": "Ανακαλύψτε τη συλλογή μας από 13 premium αθλητικά πολυμορφικά φουσκωτά, φτιαγμένα για το Αιγαίο. Από συμπαγείς βοηθητικές λέμβους έως πολυτελή cruiser.",
+    "exploreBoats": "Δείτε τα σκάφη",
+    "contactUs": "Επικοινωνία",
+    "scrollToBoats": "Μετάβαση στα σκάφη",
+    "heroImageAlt": "Αθλητικό πολυμορφικό φουσκωτό στο Αιγαίο"
+  },
+  "boatsSection": {
+    "collection": "Η συλλογή μας",
+    "title": "Βρείτε το ιδανικό σκάφος",
+    "subtitle": "Από συμπαγή 2m έως το ναυαρχίδα 11m — το RIB που ταιριάζει στα μεσογειακά σας όνειρα.",
+    "boatsFound_one": "Βρέθηκε {{count}} σκάφος",
+    "boatsFound_other": "Βρέθηκαν {{count}} σκάφη",
+    "filters": "Φίλτρα",
+    "filterBoats": "Φιλτράρισμα",
+    "clearAll": "Καθαρισμός",
+    "showBoats": "Εμφάνιση {{count}} σκαφών",
+    "showing": "Εμφάνιση {{filtered}} από {{total}} σκάφη",
+    "noMatch": "Κανένα σκάφος δεν ταιριάζει στα φίλτρα",
+    "clearFilters": "Καθαρισμός φίλτρων",
+    "loadingBoatsAria": "Φόρτωση συλλογής σκαφών"
+  },
+  "boatFilters": {
+    "modelSeries": "Σειρά μοντέλων",
+    "allModels": "Όλα τα μοντέλα",
+    "length": "Μήκος",
+    "lengthPreset24": "2 - 4μ",
+    "lengthPreset46": "4 - 6μ",
+    "lengthPreset68": "6 - 8μ",
+    "lengthPreset8p": "8μ +",
+    "clearAllFilters": "Καθαρισμός όλων"
+  },
+  "boatCard": {
+    "passengers_one": "{{count}} επιβάτης",
+    "passengers_other": "{{count}} επιβάτες",
+    "viewDetails": "Λεπτομέρειες"
+  },
+  "about": {
+    "lifestyleAlt": "Οικογένεια σε φουσκωτό Mostro",
+    "kicker": "Σχετικά με τη Mostro",
+    "title": "Χτίζοντας όνειρα για το Αιγαίο",
+    "body": "Από το 2005 η Mostro πρωταγωνιστεί στην κατασκευή RIB στην Ελλάδα. Συνδυάζουμε ιταλική φιλοσοφία σχεδίασης με ελληνική τεχνοτροπία, για σκάφη προσαρμοσμένα στη Μεσόγειο.",
+    "statsModels": "Μοντέλα",
+    "statsRange": "Εύρος",
+    "statsYears": "Έτη",
+    "features": {
+      "craft": {
+        "title": "Ελληνική τεχνοτροπία",
+        "desc": "Χειροποίητη κατασκευή στην Ελλάδα με ακρίβεια και πάθος."
+      },
+      "warranty": {
+        "title": "Εγγύηση 5 ετών",
+        "desc": "Κορυφαία εγγύηση για απόλυτη ηρεμία."
+      },
+      "service": {
+        "title": "Εξειδικευμένο service",
+        "desc": "Υποστήριξη μετά την πώληση και συντήρηση."
+      },
+      "focus": {
+        "title": "Εστίαση στον πελάτη",
+        "desc": "Εξατομικευμένη συμβουλή για το ιδανικό σκάφος."
+      }
+    }
+  },
+  "contact": {
+    "kicker": "Επικοινωνήστε",
+    "title": "Έτοιμοι για τη θάλασσα;",
+    "subtitle": "Κλείστε επίσκεψη, ζητήστε προσφορά ή συζητήστε το σκάφος για τις μεσογειακές σας διαδρομές.",
+    "visitUs": "Διεύθυνση",
+    "mapsLink": "Άνοιγμα στο Google Maps",
+    "callUs": "Τηλέφωνο",
+    "emailUs": "Email",
+    "openingHours": "Ώρες λειτουργίας",
+    "followUs": "Ακολουθήστε μας",
+    "instagramSr": "Mostro στο Instagram",
+    "facebookSr": "Mostro στο Facebook",
+    "messageSent": "Το μήνυμα στάλθηκε!",
+    "thankYou": "Σας ευχαριστούμε. Θα απαντήσουμε εντός 24 ωρών.",
+    "sendAnother": "Νέο μήνυμα",
+    "fullName": "Ονοματεπώνυμο",
+    "yourName": "Το όνομά σας",
+    "email": "Email",
+    "emailPlaceholder": "email@παράδειγμα.gr",
+    "phone": "Τηλέφωνο",
+    "interestedIn": "Ενδιαφέρομαι για",
+    "selectModel": "Επιλέξτε μοντέλο",
+    "generalInquiry": "Γενικό ερώτημα",
+    "message": "Μήνυμα",
+    "messagePlaceholder": "Περιγράψτε τις ανάγκες σας...",
+    "sending": "Αποστολή...",
+    "sendMessage": "Αποστολή",
+    "loadingContactAria": "Φόρτωση φόρμας επικοινωνίας"
+  },
+  "footer": {
+    "blurb": "Premium αθλητικά πολυμορφικά φουσκωτά κατασκευασμένα στην Ελλάδα για τη μεσογειακή ζωή. Ζήστε το Αιγαίο με τη Mostro.",
+    "quickLinks": "Σύνδεσμοι",
+    "ourBoats": "Σκάφη",
+    "aboutUs": "Σχετικά",
+    "contact": "Επικοινωνία",
+    "modelSeries": "Σειρές",
+    "contactHeading": "Επικοινωνία",
+    "copyright": "© {{year}} Mostro.gr. Με την επιφύλαξη παντός δικαιώματος.",
+    "credit": "Design & Development by Spyros Papaioannou",
+    "privacy": "Πολιτική απορρήτου",
+    "terms": "Όροι χρήσης",
+    "instagramAria": "Instagram",
+    "facebookAria": "Facebook"
+  },
+  "boatCategories": {
+    "cabin": "Καμπίνα",
+    "caramel": "Caramel",
+    "dolce-vita": "Dolce Vita",
+    "vendetta": "Vendetta",
+    "spirit": "Spirit",
+    "corvette": "Corvette",
+    "family": "Family",
+    "offshore": "Offshore",
+    "pleasure": "Pleasure",
+    "tender": "Tender",
+    "topgun": "Top Gun",
+    "sport": "Sport",
+    "top-gun-shark": "Top Gun Shark"
+  },
+  "boatDetail": {
+    "notFoundTitle": "Το σκάφος δεν βρέθηκε",
+    "notFoundBody": "Το μοντέλο που ζητήσατε δεν υπάρχει.",
+    "backAll": "Επιστροφή σε όλα τα σκάφη",
+    "backToBoats": "Πίσω στα σκάφη",
+    "passengers": "Επιβάτες",
+    "engine": "Κινητήρας",
+    "specifications": "Προδιαγραφές",
+    "specLength": "Μήκος",
+    "specBeam": "Πλάτος",
+    "specWeight": "Βάρος",
+    "specMaxPower": "Μέγ. ιπποδύναμη",
+    "specFuel": "Καύσιμο",
+    "specCert": "Πιστοποίηση",
+    "features": "Χαρακτηριστικά",
+    "requestInfo": "Αίτημα πληροφοριών",
+    "moreFromSeries": "Περισσότερα από τη σειρά {{series}}",
+    "titleSuffix": "Mostro RIBs",
+    "notFoundMeta": "Σκάφος δεν βρέθηκε | Mostro RIBs"
+  },
+  "socialShare": {
+    "label": "Κοινοποίηση:",
+    "facebook": "Κοινοποίηση στο Facebook",
+    "twitter": "Κοινοποίηση στο X",
+    "linkedin": "Κοινοποίηση στο LinkedIn",
+    "copy": "Αντιγραφή συνδέσμου"
+  },
+  "gallery": {
+    "viewFullscreen": "Προβολή σε πλήρη οθόνη",
+    "prev": "Προηγούμενη εικόνα",
+    "next": "Επόμενη εικόνα",
+    "counter": "{{name}} — εικόνα {{current}} από {{total}}",
+    "thumb": "Προβολή εικόνας {{n}}",
+    "thumbAlt": "Μικρογραφία {{name}} {{n}}"
+  },
+  "meta": {
+    "homeTitle": "Mostro RIBs | Premium αθλητικά πολυμορφικά φουσκωτά στην Ελλάδα",
+    "homeDescription": "Ανακαλύψτε τη συλλογή premium RIB από 2 έως 11 μέτρα."
+  },
+  "mobileMenu": {
+    "openMenu": "Άνοιγμα μενού"
+  },
+  "contactAddress": {
+    "addressLine1": "Λεωφ. Εθν. Αντιστάσεως 91 & Σπάτων",
+    "addressLine2": "Παλλήνη 153 51, Ελλάδα",
+    "addressShort": "Λεωφ. Εθν. Αντιστάσεως, Παλλήνη, Ελλάδα",
+    "hoursSummary": "Δευτέρα–Σάββατο: 9:00–16:30"
+  }
+}

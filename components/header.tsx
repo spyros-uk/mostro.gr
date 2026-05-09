@@ -1,6 +1,7 @@
 'use client';
 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Anchor } from 'lucide-react';
 import { SITE_NAV_LINKS } from '@/lib/site-nav';
 import {
@@ -9,8 +10,10 @@ import {
 } from '@/lib/boat-filters-storage';
 import { Button } from '@/components/ui/button';
 import { HeaderMobileSheet } from '@/components/header-mobile-sheet';
+import { LanguageSwitcher } from '@/components/language-switcher';
 
 export function Header() {
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -51,22 +54,26 @@ export function Header() {
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             {SITE_NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 to={`/${link.href}`}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
-                {link.label}
+                {t(link.labelKey)}
               </Link>
             ))}
+            <LanguageSwitcher className="shrink-0" />
             <Button asChild>
-              <Link to="/#contact">Get a Quote</Link>
+              <Link to="/#contact">{t('nav.quote')}</Link>
             </Button>
           </nav>
 
-          <HeaderMobileSheet />
+          <div className="flex items-center gap-2 md:hidden">
+            <LanguageSwitcher className="shrink-0" />
+            <HeaderMobileSheet />
+          </div>
         </div>
       </div>
     </header>

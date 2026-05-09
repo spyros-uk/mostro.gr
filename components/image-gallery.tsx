@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { cn } from '@/lib/utils';
 import { jpegPathToWebp } from '@/lib/image-webp';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -46,8 +47,16 @@ function SlidePicture({
 }
 
 export function ImageGallery({ images, alt }: ImageGalleryProps) {
+  const { t } = useTranslation();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+
+  const slideAlt = (index: number) =>
+    t('gallery.counter', {
+      name: alt,
+      current: index + 1,
+      total: images.length,
+    });
 
   const handlePrevious = () => {
     setSelectedIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
@@ -80,14 +89,14 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
         <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-muted group">
           <SlidePicture
             jpeg={images[selectedIndex]}
-            alt={`${alt} - Image ${selectedIndex + 1}`}
+            alt={slideAlt(selectedIndex)}
             objectClass="object-cover"
             priority
           />
 
           <button
             type="button"
-            aria-label="View image full screen"
+            aria-label={t('gallery.viewFullscreen')}
             className="absolute inset-0 z-[5] hidden cursor-zoom-in border-0 bg-transparent p-0 md:block"
             onClick={() => setLightboxOpen(true)}
           />
@@ -102,7 +111,7 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
                   e.stopPropagation();
                   handlePrevious();
                 }}
-                aria-label="Previous image"
+                aria-label={t('gallery.prev')}
               >
                 <ChevronLeft className="h-5 w-5" />
               </Button>
@@ -114,7 +123,7 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
                   e.stopPropagation();
                   handleNext();
                 }}
-                aria-label="Next image"
+                aria-label={t('gallery.next')}
               >
                 <ChevronRight className="h-5 w-5" />
               </Button>
@@ -135,15 +144,13 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
           )}
           aria-describedby={undefined}
         >
-          <DialogTitle className="sr-only">
-            {alt} — image {selectedIndex + 1} of {images.length}
-          </DialogTitle>
+          <DialogTitle className="sr-only">{slideAlt(selectedIndex)}</DialogTitle>
 
           <div className="relative flex min-h-0 flex-1 items-center justify-center p-4 pt-14">
             <div className="relative h-full w-full max-h-[calc(100dvh-6rem)] max-w-[100vw]">
               <SlidePicture
                 jpeg={images[selectedIndex]}
-                alt={`${alt} - Image ${selectedIndex + 1}`}
+                alt={slideAlt(selectedIndex)}
                 objectClass="object-contain"
               />
             </div>
@@ -155,7 +162,7 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
                   size="icon"
                   className="absolute left-2 top-1/2 z-10 h-11 w-11 -translate-y-1/2 rounded-full bg-background/90 text-foreground backdrop-blur-sm md:left-4 md:h-12 md:w-12"
                   onClick={handlePrevious}
-                  aria-label="Previous image"
+                  aria-label={t('gallery.prev')}
                 >
                   <ChevronLeft className="h-6 w-6" />
                 </Button>
@@ -164,7 +171,7 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
                   size="icon"
                   className="absolute right-2 top-1/2 z-10 h-11 w-11 -translate-y-1/2 rounded-full bg-background/90 text-foreground backdrop-blur-sm md:right-4 md:h-12 md:w-12"
                   onClick={handleNext}
-                  aria-label="Next image"
+                  aria-label={t('gallery.next')}
                 >
                   <ChevronRight className="h-6 w-6" />
                 </Button>
@@ -191,13 +198,13 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
                   ? 'ring-2 ring-primary ring-offset-2'
                   : 'opacity-70 hover:opacity-100',
               )}
-              aria-label={`View image ${index + 1}`}
+              aria-label={t('gallery.thumb', { n: index + 1 })}
             >
               <picture className="absolute inset-0 block h-full w-full">
                 <source srcSet={jpegPathToWebp(image)} type="image/webp" />
                 <img
                   src={image}
-                  alt={`${alt} thumbnail ${index + 1}`}
+                  alt={t('gallery.thumbAlt', { name: alt, n: index + 1 })}
                   className="h-full w-full object-cover"
                   width={96}
                   height={80}

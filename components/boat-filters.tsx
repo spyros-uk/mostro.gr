@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { categories, SLIDER_LENGTH_GLOBAL, type BoatCategory } from '@/lib/boats';
@@ -25,12 +26,21 @@ export function BoatFilters({
   hasActiveFilters,
   onClearAll,
 }: BoatFiltersProps) {
+  const { t } = useTranslation();
+
+  const lengthPresets: { labelKey: string; range: [number, number] }[] = [
+    { labelKey: 'boatFilters.lengthPreset24', range: [2, 4] },
+    { labelKey: 'boatFilters.lengthPreset46', range: [4, 6] },
+    { labelKey: 'boatFilters.lengthPreset68', range: [6, 8] },
+    { labelKey: 'boatFilters.lengthPreset8p', range: [8, 11] },
+  ];
+
   return (
     <div className="space-y-6">
       {/* Category Filter */}
       <div className="space-y-3">
         <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-          Model Series
+          {t('boatFilters.modelSeries')}
         </h3>
         
         {/* Chips on all breakpoints so tap again toggles off (same as length presets) */}
@@ -41,7 +51,7 @@ export function BoatFilters({
             onClick={() => onCategoryChange('all')}
             className="rounded-full text-xs"
           >
-            All Models
+            {t('boatFilters.allModels')}
           </Button>
           {categories.map((cat) => (
             <Button
@@ -51,7 +61,7 @@ export function BoatFilters({
               onClick={() => onCategoryChange(cat.value)}
               className="rounded-full text-xs"
             >
-              {cat.label}
+              {t(`boatCategories.${cat.value}`)}
             </Button>
           ))}
         </div>
@@ -61,7 +71,7 @@ export function BoatFilters({
       <div className="space-y-3">
         <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
           <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider shrink-0">
-            Length
+            {t('boatFilters.length')}
           </h3>
           <span className="text-sm font-medium text-foreground tabular-nums">
             {lengthRange[0]}m - {lengthRange[1]}m
@@ -88,14 +98,9 @@ export function BoatFilters({
           <div className="flex flex-wrap items-center gap-2 md:gap-3 shrink-0">
             {/* Quick Length Buttons */}
             <div className="flex flex-wrap gap-1.5">
-              {[
-                { label: '2 - 4m', range: [2, 4] as [number, number] },
-                { label: '4 - 6m', range: [4, 6] as [number, number] },
-                { label: '6 - 8m', range: [6, 8] as [number, number] },
-                { label: '8m +', range: [8, 11] as [number, number] },
-              ].map((item) => (
+              {lengthPresets.map((item) => (
                 <Button
-                  key={item.label}
+                  key={item.labelKey}
                   variant="outline"
                   size="sm"
                   onClick={() => {
@@ -114,7 +119,7 @@ export function BoatFilters({
                       : '',
                   )}
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </Button>
               ))}
             </div>
@@ -125,7 +130,7 @@ export function BoatFilters({
                 onClick={onClearAll}
                 className="h-[2.2rem] shrink-0 px-2 text-muted-foreground hover:text-foreground"
               >
-                Clear all
+                {t('boatFilters.clearAllFilters')}
               </Button>
             )}
           </div>

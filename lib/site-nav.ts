@@ -1,5 +1,5 @@
 export const SITE_NAV_LINKS = [
-  { href: '#boats', label: 'Our Boats' },
-  { href: '#about', label: 'About' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#boats', labelKey: 'nav.boats' },
+  { href: '#about', labelKey: 'nav.about' },
+  { href: '#contact', labelKey: 'nav.contact' },
 ] as const;

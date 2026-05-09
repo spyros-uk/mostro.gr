@@ -1,0 +1,179 @@
+{
+  "language": {
+    "switcherAria": "Language"
+  },
+  "nav": {
+    "boats": "Our Boats",
+    "about": "About",
+    "contact": "Contact",
+    "quote": "Get a Quote"
+  },
+  "hero": {
+    "tagline": "Premium RIBs Since 2005",
+    "title": "Live the Experience",
+    "subtitle": "Holidays at Sea",
+    "body": "Discover our collection of 13 premium Sport Rigid Inflatable Boats, crafted for the Aegean Sea. From compact tenders to luxury cruisers.",
+    "exploreBoats": "Explore Our Boats",
+    "contactUs": "Contact Us",
+    "scrollToBoats": "Scroll to boats",
+    "heroImageAlt": "Sport rigid inflatable boat cruising in the Mediterranean"
+  },
+  "boatsSection": {
+    "collection": "Our Collection",
+    "title": "Find Your Perfect Boat",
+    "subtitle": "From compact 2m tenders to our luxurious 11m flagship, discover the RIB that matches your Mediterranean dreams.",
+    "boatsFound_one": "{{count}} boat found",
+    "boatsFound_other": "{{count}} boats found",
+    "filters": "Filters",
+    "filterBoats": "Filter Boats",
+    "clearAll": "Clear all",
+    "showBoats": "Show {{count}} Boats",
+    "showing": "Showing {{filtered}} of {{total}} boats",
+    "noMatch": "No boats match your filters",
+    "clearFilters": "Clear all filters",
+    "loadingBoatsAria": "Loading boat collection"
+  },
+  "boatFilters": {
+    "modelSeries": "Model Series",
+    "allModels": "All Models",
+    "length": "Length",
+    "lengthPreset24": "2 - 4m",
+    "lengthPreset46": "4 - 6m",
+    "lengthPreset68": "6 - 8m",
+    "lengthPreset8p": "8m +",
+    "clearAllFilters": "Clear all"
+  },
+  "boatCard": {
+    "passengers_one": "{{count}} passenger",
+    "passengers_other": "{{count}} passengers",
+    "viewDetails": "View Details"
+  },
+  "about": {
+    "lifestyleAlt": "Family enjoying a day on a Mostro RIB",
+    "kicker": "About Mostro",
+    "title": "Building Dreams for the Aegean Sea",
+    "body": "Since 2005, Mostro has been at the forefront of RIB manufacturing in Greece. Our boats combine Italian design philosophy with Greek craftsmanship, creating vessels perfectly suited for the unique conditions of the Mediterranean.",
+    "statsModels": "Models",
+    "statsRange": "Range",
+    "statsYears": "Years",
+    "features": {
+      "craft": {
+        "title": "Greek Craftsmanship",
+        "desc": "Each boat is handcrafted in Greece with precision and passion."
+      },
+      "warranty": {
+        "title": "5-Year Warranty",
+        "desc": "Industry-leading warranty for complete peace of mind."
+      },
+      "service": {
+        "title": "Expert Service",
+        "desc": "Dedicated after-sales support and maintenance services."
+      },
+      "focus": {
+        "title": "Customer Focus",
+        "desc": "Personalized consultation to find your ideal vessel."
+      }
+    }
+  },
+  "contact": {
+    "kicker": "Get in Touch",
+    "title": "Ready to Experience the Sea?",
+    "subtitle": "Contact us to schedule a viewing, request a quote, or discuss your perfect Mediterranean adventure vessel.",
+    "visitUs": "Visit Us",
+    "mapsLink": "View on Google Maps",
+    "callUs": "Call Us",
+    "emailUs": "Email Us",
+    "openingHours": "Opening Hours",
+    "followUs": "Follow Us",
+    "instagramSr": "Mostro on Instagram",
+    "facebookSr": "Mostro on Facebook",
+    "messageSent": "Message Sent!",
+    "thankYou": "Thank you for your interest. We'll get back to you within 24 hours.",
+    "sendAnother": "Send Another Message",
+    "fullName": "Full Name",
+    "yourName": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "interestedIn": "Interested In",
+    "selectModel": "Select a model",
+    "generalInquiry": "General Inquiry",
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your boating needs...",
+    "sending": "Sending...",
+    "sendMessage": "Send Message",
+    "loadingContactAria": "Loading contact section"
+  },
+  "footer": {
+    "blurb": "Premium Sport Rigid Inflatable Boats crafted in Greece for the Mediterranean lifestyle. Experience the Aegean with Mostro.",
+    "quickLinks": "Quick Links",
+    "ourBoats": "Our Boats",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "modelSeries": "Model Series",
+    "contactHeading": "Contact",
+    "copyright": "© {{year}} Mostro.gr. All rights reserved.",
+    "credit": "Design & Development by Spyros Papaioannou",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "instagramAria": "Instagram",
+    "facebookAria": "Facebook"
+  },
+  "boatCategories": {
+    "cabin": "Cabin",
+    "caramel": "Caramel",
+    "dolce-vita": "Dolce Vita",
+    "vendetta": "Vendetta",
+    "spirit": "Spirit",
+    "corvette": "Corvette",
+    "family": "Family",
+    "offshore": "Offshore",
+    "pleasure": "Pleasure",
+    "tender": "Tender",
+    "topgun": "Top Gun",
+    "sport": "Sport",
+    "top-gun-shark": "Top Gun Shark"
+  },
+  "boatDetail": {
+    "notFoundTitle": "Boat not found",
+    "notFoundBody": "The model you requested does not exist.",
+    "backAll": "Back to all boats",
+    "backToBoats": "Back to All Boats",
+    "passengers": "Passengers",
+    "engine": "Engine",
+    "specifications": "Specifications",
+    "specLength": "Length",
+    "specBeam": "Beam",
+    "specWeight": "Weight",
+    "specMaxPower": "Max Power",
+    "specFuel": "Fuel",
+    "specCert": "Certification",
+    "features": "Features",
+    "requestInfo": "Request Information",
+    "moreFromSeries": "More from {{series}} Series",
+    "titleSuffix": "Mostro RIBs",
+    "notFoundMeta": "Boat Not Found | Mostro RIBs"
+  },
+  "socialShare": {
+    "label": "Share:",
+    "facebook": "Share on Facebook",
+    "twitter": "Share on X (Twitter)",
+    "linkedin": "Share on LinkedIn",
+    "copy": "Copy link"
+  },
+  "gallery": {
+    "viewFullscreen": "View image full screen",
+    "prev": "Previous image",
+    "next": "Next image",
+    "counter": "{{name}} — image {{current}} of {{total}}",
+    "thumb": "View image {{n}}",
+    "thumbAlt": "{{name}} thumbnail {{n}}"
+  },
+  "meta": {
+    "homeTitle": "Mostro RIBs | Premium Sport Rigid Inflatable Boats in Greece",
+    "homeDescription": "Discover our collection of premium Sport Rigid Inflatable Boats (RIBs) from 2-11 meters."
+  },
+  "mobileMenu": {
+    "openMenu": "Open menu"
+  }
+}

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   boats,
   getSliderLengthRangeForCategory,
@@ -26,6 +27,7 @@ import {
 } from '@/components/ui/sheet';
 
 export function BoatsSection() {
+  const { t } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState<BoatCategory | 'all'>('all');
   const [lengthRange, setLengthRange] = useState<[number, number]>(SLIDER_LENGTH_GLOBAL);
   const [lengthManual, setLengthManual] = useState(false);
@@ -130,14 +132,13 @@ export function BoatsSection() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <p className="text-accent text-sm uppercase tracking-[0.2em] font-medium mb-3">
-            Our Collection
+            {t('boatsSection.collection')}
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
-            Find Your Perfect Boat
+            {t('boatsSection.title')}
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            From compact 2m tenders to our luxurious 11m flagship, discover the RIB 
-            that matches your Mediterranean dreams.
+            {t('boatsSection.subtitle')}
           </p>
         </div>
 
@@ -157,13 +158,13 @@ export function BoatsSection() {
         {/* Mobile Filter Toggle */}
         <div className="md:hidden mb-6 flex items-center justify-between">
           <div className="text-sm text-muted-foreground">
-            {filteredBoats.length} boat{filteredBoats.length !== 1 ? 's' : ''} found
+            {t('boatsSection.boatsFound', { count: filteredBoats.length })}
           </div>
           <Sheet open={filtersOpen} onOpenChange={setFiltersOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" size="sm" className="gap-2">
                 <SlidersHorizontal className="w-4 h-4" />
-                Filters
+                {t('boatsSection.filters')}
                 {hasActiveFilters && (
                   <span className="w-2 h-2 rounded-full bg-accent" />
                 )}
@@ -172,10 +173,10 @@ export function BoatsSection() {
             <SheetContent side="bottom" className="h-[80vh] rounded-t-xl px-6">
               <SheetHeader className="pr-2">
                 <SheetTitle className="flex items-center justify-between">
-                  <span>Filter Boats</span>
+                  <span>{t('boatsSection.filterBoats')}</span>
                   {hasActiveFilters && (
                     <Button variant="ghost" size="sm" onClick={clearFilters}>
-                      Clear all
+                      {t('boatsSection.clearAll')}
                     </Button>
                   )}
                 </SheetTitle>
@@ -190,7 +191,7 @@ export function BoatsSection() {
               </div>
               <div className="mt-8 pr-2">
                 <Button className="w-full" onClick={() => setFiltersOpen(false)}>
-                  Show {filteredBoats.length} Boats
+                  {t('boatsSection.showBoats', { count: filteredBoats.length })}
                 </Button>
               </div>
             </SheetContent>
@@ -200,7 +201,7 @@ export function BoatsSection() {
         {/* Results Count - Desktop */}
         <div className="hidden md:block mb-6">
           <p className="text-sm text-muted-foreground">
-            Showing {filteredBoats.length} of {boats.length} boats
+            {t('boatsSection.showing', { filtered: filteredBoats.length, total: boats.length })}
           </p>
         </div>
 
@@ -214,10 +215,10 @@ export function BoatsSection() {
         ) : (
           <div className="text-center py-16">
             <p className="text-lg text-muted-foreground mb-4">
-              No boats match your filters
+              {t('boatsSection.noMatch')}
             </p>
             <Button variant="outline" onClick={clearFilters}>
-              Clear all filters
+              {t('boatsSection.clearFilters')}
             </Button>
           </div>
         )}

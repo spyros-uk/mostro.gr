@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 
 export function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
@@ -15,7 +18,7 @@ export function Hero() {
           <source srcSet="/images/hero-boat.webp" type="image/webp" />
           <img
             src="/images/hero-boat.jpg"
-            alt="Sport Rigid Inflatable Boat cruising in the Mediterranean"
+            alt={t('hero.heroImageAlt')}
             className="absolute inset-0 h-full w-full object-cover"
             width={1920}
             height={1280}
@@ -29,21 +32,20 @@ export function Hero() {
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-3xl mx-auto space-y-6">
           <p className="text-primary-foreground/80 text-sm md:text-base uppercase tracking-[0.3em] font-medium">
-            Premium RIBs Since 2005
+            {t('hero.tagline')}
           </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight text-balance">
-            Live the Experience
+            {t('hero.title')}
           </h1>
           <p className="text-xl md:text-2xl text-primary-foreground/90 font-light">
-            Holidays at Sea
+            {t('hero.subtitle')}
           </p>
           <p className="text-primary-foreground/70 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-            Discover our collection of 13 premium Sport Rigid Inflatable Boats,
-            crafted for the Aegean Sea. From compact tenders to luxury cruisers.
+            {t('hero.body')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button size="lg" asChild className="text-base">
-              <Link to="/#boats">Explore Our Boats</Link>
+              <Link to="/#boats">{t('hero.exploreBoats')}</Link>
             </Button>
             <Button
               size="lg"
@@ -51,7 +53,7 @@ export function Hero() {
               asChild
               className="text-base bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
             >
-              <Link to="/#contact">Contact Us</Link>
+              <Link to="/#contact">{t('hero.contactUs')}</Link>
             </Button>
           </div>
         </div>
@@ -60,7 +62,7 @@ export function Hero() {
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <Link to="/#boats" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
           <ChevronDown className="w-8 h-8" />
-          <span className="sr-only">Scroll to boats</span>
+          <span className="sr-only">{t('hero.scrollToBoats')}</span>
         </Link>
       </div>
     </section>

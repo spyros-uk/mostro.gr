@@ -80,7 +80,7 @@ export function BoatFilters({
 
         {/* Slider uses half the row; presets sit beside it */}
         <div className="flex flex-wrap items-center gap-4">
-          <div className="w-full md:w-1/2 min-w-[min(100%,12rem)] px-1">
+          <div className="w-full md:w-1/2 min-w-[min(100%,12rem)] translate-y-[4px] px-1">
             <Slider
               value={lengthRange}
               min={2}
@@ -89,7 +89,7 @@ export function BoatFilters({
               onValueChange={(value) => onLengthChange(value as [number, number])}
               className="w-full"
             />
-            <div className="flex justify-between text-xs text-muted-foreground mt-1">
+            <div className="flex justify-between text-xs text-muted-foreground mt-[0.6rem]">
               <span>2m</span>
               <span>11m</span>
             </div>

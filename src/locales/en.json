@@ -188,37 +188,41 @@
       "backHome": "Back to home"
     },
     "privacy": {
-      "metaTitle": "Privacy Policy | Mostro RIBs",
-      "title": "Privacy Policy",
+      "metaTitle": "Protection of personal data | Mostro RIBs",
+      "title": "Protection of personal data",
       "updated": "Last updated: May 2026",
       "sections": [
         {
-          "heading": "Introduction",
-          "body": "This notice explains how Mostro.gr (“we”, “us”) handles information when you visit our website. We aim to be clear and proportionate: this is a brochure-style site about our boats and how to contact us."
-        },
-        {
-          "heading": "Who is responsible",
-          "body": "The site is operated in connection with Mostro boat sales and marketing. For privacy questions you can contact us at Info@mostro.gr or using the details on our Contact page."
-        },
-        {
-          "heading": "Information we may process",
-          "body": "When you browse the site, standard technical data may be processed by our hosting provider (for example IP address in server logs for security and reliability).\n\nIf you call, email, or message us, we process the information you choose to share so we can respond to your enquiry.\n\nThe contact form on this website is for demonstration: it does not send your message to our servers automatically. When you connect a real backend, you should describe that processing here."
-        },
-        {
-          "heading": "Cookies and local storage",
-          "body": "We use a small amount of browser storage to remember your language choice and optional boat filter preferences, and to remember that you acknowledged our cookie notice. See our Cookie Policy for names and purposes."
-        },
-        {
-          "heading": "Retention and security",
-          "body": "We keep information only as long as needed for the purpose it was collected (for example correspondence about a sale or support request). We apply reasonable technical and organisational measures appropriate to a small business website."
+          "heading": "Collection and processing",
+          "body": "When you visit our website, you may be asked to provide personal information that relates to you (name, surname, occupation, e-mail address, postal address, etc.) so that we can provide our services as effectively as possible. Any personal data you submit on our website are kept exclusively for purposes related to your transactions with us, improving the services provided, and ensuring the operation of the relevant service, and may not be used by any third party (except where provided by law to the competent authorities only).\n\nIn any case, the employees who have access to your personal data are specifically designated, and access by unauthorised persons to your personal data is prohibited. Every reasonable measure has been taken to secure your data. In some cases your personal details may also be disclosed to partner companies, in order to support, promote and carry out your transactional relationship with us, but always under conditions that fully ensure that your personal data are not subject to any unlawful processing."
         },
         {
           "heading": "Your rights",
-          "body": "Depending on applicable law (including GDPR where it applies), you may have rights to access, correct, delete, or restrict processing of personal data, and to lodge a complaint with a supervisory authority. Contact us and we will respond in a reasonable time."
+          "body": "At any time, the user retains the right to be informed of, or to object to, further processing of their data in accordance with the applicable legislation on the protection of personal data, and has the following rights:"
         },
         {
-          "heading": "Changes",
-          "body": "We may update this policy from time to time. The “Last updated” date at the top will change when we do."
+          "heading": "Access and information",
+          "body": "You have the right to obtain information about which data we have collected, for what purpose we collected it, and for how long we will retain it."
+        },
+        {
+          "heading": "Rectification",
+          "body": "You have the right to ask us to correct any inaccurate information about you or to complete further information about you."
+        },
+        {
+          "heading": "Restriction of and objection to processing",
+          "body": "You have the right to ask us to restrict or even to stop processing your personal data if you contest the accuracy of the information we hold about you, if you find that we are processing your data unlawfully, or if you no longer wish to receive promotional messages about our products and services."
+        },
+        {
+          "heading": "Data portability",
+          "body": "You have the right to ask us to transfer your personal data to another organisation for you."
+        },
+        {
+          "heading": "Erasure",
+          "body": "Finally, you have the right to ask us in writing to erase your personal data when they are no longer necessary in relation to the purposes for which they were collected, if you wish to withdraw your consent to this processing, and if your data have been unlawfully processed in breach of the regulation on the protection of personal data."
+        },
+        {
+          "heading": "How to exercise your rights",
+          "body": "If you wish to exercise these rights, please contact us by email at hdaniel@otenet.gr"
         }
       ]
     },
@@ -259,28 +263,20 @@
     },
     "cookies": {
       "metaTitle": "Cookie Policy | Mostro RIBs",
-      "title": "Cookie Policy",
+      "title": "Cookies",
       "updated": "Last updated: May 2026",
       "sections": [
         {
-          "heading": "Do we use advertising cookies?",
-          "body": "No. We do not run advertising pixels or social “like” trackers on this site for marketing profiling."
+          "heading": "What are cookies?",
+          "body": "Cookies are small text files that are stored in your browser while you browse the internet. Their purpose is to tell the website you are visiting about your previous activity. They usually store information such as your username and password so that when you visit the same site later, it can “remember” you and you do not need to log in again."
         },
         {
-          "heading": "What we store in your browser",
-          "body": "We use local storage (similar in effect to cookies) for a few practical reasons:\n\n• Language preference (key: mostro.i18n.lang) — remembers Greek or English.\n\n• Boat filter preferences (key: mostro.gr/boat-filters) — remembers your selections on the boat listing.\n\n• Session storage may be used briefly when navigating (for example resetting filters when you return home).\n\n• Cookie notice (key: mostro.cookieBanner) — remembers that you dismissed the small notice bar so it does not keep reappearing."
+          "heading": "Cookie categories",
+          "body": "1) Strictly necessary cookies\n\nThese allow core site functions to run, such as adding products to the cart, online payment, and saving products to a wish list. Without these strictly necessary cookies, the smooth running of the e‑shop and your personal browsing experience are reduced, because basic e‑commerce functions do not work properly.\n\n2) Performance cookies\n\nPerformance cookies collect information about how visitors use the website. They let us see which pages are visited most often, or show us whether visitors run into problems while browsing. These cookies do not collect information that identifies the visitor.\n\n3) Functionality and analytics cookies\n\nThese cookies “remember” your preferences while you browse our site so we can suggest suitable products based on your needs. They also let us assess how effective different features of our site are.\n\n4) Advertising cookies\n\nThese cookies are used to deliver ads that are more relevant to you and your interests. They are also used to send targeted advertising or offers in order to limit bulk, unwanted and pointless advertising messages. They also help us measure the effectiveness of advertising campaigns."
         },
         {
-          "heading": "Are these cookies “essential”?",
-          "body": "They are limited to functionality and transparency on this site. We do not use them to sell your data or to track you across other companies’ websites."
-        },
-        {
-          "heading": "Managing your data",
-          "body": "You can clear site data from your browser settings at any time. If you clear storage, your language and filter preferences will reset."
-        },
-        {
-          "heading": "Updates",
-          "body": "If we add analytics or marketing tools in the future, we will update this page and, where required, ask for your consent before non-essential cookies are set."
+          "heading": "How you can disable cookies",
+          "body": "You can set your browser to block or warn you about these cookies, but some parts of the website will not work correctly.\n\nIf you use Internet Explorer:\n\nFrom the menu, choose “Tools”, then “Internet Options”.\nClick the “Privacy” tab.\nChoose the setting that suits you.\n\nIf you use Google Chrome:\n\nChoose “Settings”, then “Advanced”.\nUnder “Privacy and security”, click “Content settings”.\nClick “Cookies”.\n\nIf you use Safari:\n\nChoose “Preferences”, then “Privacy”.\nClick “Remove all website data”.\n\nIf you use Mozilla Firefox:\n\nFrom the menu, choose “Tools”, then “Options”.\nClick the “Privacy” icon.\nFind the “cookies” menu and choose the relevant options.\n\nFinally, if you use Opera 6.0:\n\nFrom the menu, choose “Files”, then “Preferences”.\nClick “Privacy”."
         }
       ]
     }

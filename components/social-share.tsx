@@ -12,8 +12,9 @@ interface SocialShareProps {
 }
 
 export function SocialShare({ url, title, description }: SocialShareProps) {
+  const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
-  
+
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
   const encodedDescription = encodeURIComponent(description || '');

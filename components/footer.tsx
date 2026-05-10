@@ -138,12 +138,15 @@ export function Footer() {
           >
             {t('footer.credit')}
           </a>
-          <div className="flex gap-6 text-sm text-background/50 w-full md:flex-1 justify-center md:justify-end">
-            <Link to="#" className="hover:text-background transition-colors">
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-background/50 w-full md:flex-1 justify-center md:justify-end">
+            <Link to="/privacy" className="hover:text-background transition-colors">
               {t('footer.privacy')}
             </Link>
-            <Link to="#" className="hover:text-background transition-colors">
+            <Link to="/terms" className="hover:text-background transition-colors">
               {t('footer.terms')}
+            </Link>
+            <Link to="/cookies" className="hover:text-background transition-colors">
+              {t('footer.cookies')}
             </Link>
           </div>
         </div>

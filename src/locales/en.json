@@ -116,6 +116,7 @@
     "credit": "Design & Development by Spyros Papaioannou",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
+    "cookies": "Cookie Policy",
     "instagramAria": "Instagram",
     "facebookAria": "Facebook"
   },
@@ -175,5 +176,113 @@
   },
   "mobileMenu": {
     "openMenu": "Open menu"
+  },
+  "cookieBanner": {
+    "aria": "Cookie and storage notice",
+    "message": "We save only essential preferences on your device (for example language and boat filters). We do not use advertising cookies on this site.",
+    "learnMore": "Cookie policy",
+    "ok": "OK"
+  },
+  "legalDocs": {
+    "common": {
+      "backHome": "Back to home"
+    },
+    "privacy": {
+      "metaTitle": "Privacy Policy | Mostro RIBs",
+      "title": "Privacy Policy",
+      "updated": "Last updated: May 2026",
+      "sections": [
+        {
+          "heading": "Introduction",
+          "body": "This notice explains how Mostro.gr (“we”, “us”) handles information when you visit our website. We aim to be clear and proportionate: this is a brochure-style site about our boats and how to contact us."
+        },
+        {
+          "heading": "Who is responsible",
+          "body": "The site is operated in connection with Mostro boat sales and marketing. For privacy questions you can contact us at Info@mostro.gr or using the details on our Contact page."
+        },
+        {
+          "heading": "Information we may process",
+          "body": "When you browse the site, standard technical data may be processed by our hosting provider (for example IP address in server logs for security and reliability).\n\nIf you call, email, or message us, we process the information you choose to share so we can respond to your enquiry.\n\nThe contact form on this website is for demonstration: it does not send your message to our servers automatically. When you connect a real backend, you should describe that processing here."
+        },
+        {
+          "heading": "Cookies and local storage",
+          "body": "We use a small amount of browser storage to remember your language choice and optional boat filter preferences, and to remember that you acknowledged our cookie notice. See our Cookie Policy for names and purposes."
+        },
+        {
+          "heading": "Retention and security",
+          "body": "We keep information only as long as needed for the purpose it was collected (for example correspondence about a sale or support request). We apply reasonable technical and organisational measures appropriate to a small business website."
+        },
+        {
+          "heading": "Your rights",
+          "body": "Depending on applicable law (including GDPR where it applies), you may have rights to access, correct, delete, or restrict processing of personal data, and to lodge a complaint with a supervisory authority. Contact us and we will respond in a reasonable time."
+        },
+        {
+          "heading": "Changes",
+          "body": "We may update this policy from time to time. The “Last updated” date at the top will change when we do."
+        }
+      ]
+    },
+    "terms": {
+      "metaTitle": "Terms of Service | Mostro RIBs",
+      "title": "Terms of Service",
+      "updated": "Last updated: May 2026",
+      "sections": [
+        {
+          "heading": "Agreement",
+          "body": "By using Mostro.gr you agree to these terms. If you do not agree, please do not use the website."
+        },
+        {
+          "heading": "Use of the website",
+          "body": "You may use the site for lawful, personal, or internal business purposes related to learning about our products and contacting us. Do not attempt to disrupt the site, probe for vulnerabilities, or scrape it in a way that harms performance."
+        },
+        {
+          "heading": "Information about products",
+          "body": "Specifications, images, and descriptions are for general information. They may change without notice. A sale is governed solely by the written agreement between you and us, not by this website alone."
+        },
+        {
+          "heading": "Intellectual property",
+          "body": "Content on this site (text, images, branding) is owned by us or used with permission. You may not copy or reuse it for commercial purposes without our consent."
+        },
+        {
+          "heading": "Limitation of liability",
+          "body": "The site is provided “as is” to the extent permitted by law. We are not liable for indirect loss or for issues caused by third-party services or links you follow from the site."
+        },
+        {
+          "heading": "Governing law",
+          "body": "Where mandatory consumer law does not say otherwise, any dispute shall be subject to the courts of Greece."
+        },
+        {
+          "heading": "Contact",
+          "body": "Questions about these terms: Info@mostro.gr or the contact details on our Contact page."
+        }
+      ]
+    },
+    "cookies": {
+      "metaTitle": "Cookie Policy | Mostro RIBs",
+      "title": "Cookie Policy",
+      "updated": "Last updated: May 2026",
+      "sections": [
+        {
+          "heading": "Do we use advertising cookies?",
+          "body": "No. We do not run advertising pixels or social “like” trackers on this site for marketing profiling."
+        },
+        {
+          "heading": "What we store in your browser",
+          "body": "We use local storage (similar in effect to cookies) for a few practical reasons:\n\n• Language preference (key: mostro.i18n.lang) — remembers Greek or English.\n\n• Boat filter preferences (key: mostro.gr/boat-filters) — remembers your selections on the boat listing.\n\n• Session storage may be used briefly when navigating (for example resetting filters when you return home).\n\n• Cookie notice (key: mostro.cookieBanner) — remembers that you dismissed the small notice bar so it does not keep reappearing."
+        },
+        {
+          "heading": "Are these cookies “essential”?",
+          "body": "They are limited to functionality and transparency on this site. We do not use them to sell your data or to track you across other companies’ websites."
+        },
+        {
+          "heading": "Managing your data",
+          "body": "You can clear site data from your browser settings at any time. If you clear storage, your language and filter preferences will reset."
+        },
+        {
+          "heading": "Updates",
+          "body": "If we add analytics or marketing tools in the future, we will update this page and, where required, ask for your consent before non-essential cookies are set."
+        }
+      ]
+    }
   }
 }

@@ -79,7 +79,9 @@ function BoatPageDetail({ boat }: { boat: Boat }) {
   const { t, i18n } = useTranslation();
   const lb = useLocalizedBoat(boat);
   const relatedBoats = getRelatedBoats(boat);
-  const baseUrl = import.meta.env.VITE_BASE_URL || window.location.origin;
+  const baseUrl =
+    (typeof import.meta !== 'undefined' && import.meta.env?.VITE_BASE_URL) ||
+    (typeof window !== 'undefined' ? window.location.origin : '');
   const boatUrl = `${baseUrl}/boats/${boat.slug}/`;
 
   useEffect(() => {

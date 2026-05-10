@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { Anchor, MapPin, Phone, Mail } from 'lucide-react';
 import { SITE_CONTACT } from '@/lib/site-contact';
@@ -16,7 +16,7 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 gap-y-10 mb-8">
           {/* Col 1: Brand + description */}
           <div>
-            <Link to="/" className="flex items-center gap-2 mb-4">
+            <Link href="/" className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-full bg-background flex items-center justify-center">
                 <Anchor className="w-5 h-5 text-foreground" />
               </div>
@@ -34,17 +34,17 @@ export function Footer() {
             <h2 className="text-base font-semibold mb-4">{t('footer.quickLinks')}</h2>
             <ul className="space-y-2 text-background/70">
               <li>
-                <Link to="/#boats" className="hover:text-background transition-colors">
+                <Link href="/#boats" className="hover:text-background transition-colors">
                   {t('footer.ourBoats')}
                 </Link>
               </li>
               <li>
-                <Link to="/#about" className="hover:text-background transition-colors">
+                <Link href="/#about" className="hover:text-background transition-colors">
                   {t('footer.aboutUs')}
                 </Link>
               </li>
               <li>
-                <Link to="/#contact" className="hover:text-background transition-colors">
+                <Link href="/#contact" className="hover:text-background transition-colors">
                   {t('footer.contact')}
                 </Link>
               </li>
@@ -59,7 +59,7 @@ export function Footer() {
                 {categories.map((cat) => (
                   <Link
                     key={cat.value}
-                    to="/#boats"
+                    href="/#boats"
                     className="hover:text-background transition-colors"
                   >
                     {t(`boatCategories.${cat.value}`)}
@@ -139,13 +139,13 @@ export function Footer() {
             {t('footer.credit')}
           </a>
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-background/50 w-full md:flex-1 justify-center md:justify-end">
-            <Link to="/privacy" className="hover:text-background transition-colors">
+            <Link href="/privacy/" className="hover:text-background transition-colors">
               {t('footer.privacy')}
             </Link>
-            <Link to="/terms" className="hover:text-background transition-colors">
+            <Link href="/terms/" className="hover:text-background transition-colors">
               {t('footer.terms')}
             </Link>
-            <Link to="/cookies" className="hover:text-background transition-colors">
+            <Link href="/cookies/" className="hover:text-background transition-colors">
               {t('footer.cookies')}
             </Link>
           </div>

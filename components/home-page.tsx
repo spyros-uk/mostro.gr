@@ -1,3 +1,5 @@
+'use client';
+
 import { Suspense, lazy, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Header } from '@/components/header';

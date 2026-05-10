@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { Menu } from 'lucide-react';
 import { SITE_NAV_LINKS } from '@/lib/site-nav';
@@ -27,7 +27,7 @@ export function HeaderMobileSheet() {
           {SITE_NAV_LINKS.map((link) => (
             <Link
               key={link.href}
-              to={`/${link.href}`}
+              href={`/${link.href}`}
               onClick={() => setOpen(false)}
               className="text-lg font-medium text-foreground hover:text-accent transition-colors"
             >
@@ -35,7 +35,7 @@ export function HeaderMobileSheet() {
             </Link>
           ))}
           <Button asChild className="mt-4">
-            <Link to="/#contact" onClick={() => setOpen(false)}>
+            <Link href="/#contact" onClick={() => setOpen(false)}>
               {t('nav.quote')}
             </Link>
           </Button>

@@ -1,7 +1,10 @@
-import { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+'use client';
+
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
-import { getBoatBySlug, getRelatedBoats, type Boat } from '@/lib/boats';
+import { getRelatedBoats, type Boat } from '@/lib/boats';
 import { jpegPathToWebp } from '@/lib/image-webp';
 import { ImageGallery } from '@/components/image-gallery';
 import { SocialShare } from '@/components/social-share';
@@ -25,7 +28,7 @@ import {
 function RelatedBoatCard({ boat }: { boat: Boat }) {
   const b = useLocalizedBoat(boat);
   return (
-    <Link to={`/boats/${b.slug}/`}>
+    <Link href={`/boats/${b.slug}/`}>
       <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300">
         <div className="relative aspect-[4/3] overflow-hidden">
           <picture className="absolute inset-0 block h-full w-full">
@@ -55,34 +58,16 @@ function RelatedBoatCard({ boat }: { boat: Boat }) {
   );
 }
 
-function BoatPageNotFound() {
+function BoatDetail({ boat }: { boat: Boat }) {
   const { t, i18n } = useTranslation();
-
-  useEffect(() => {
-    document.title = t('boatDetail.notFoundMeta');
-  }, [t, i18n.language]);
-
-  return (
-    <main className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-24 text-center">
-        <h1 className="text-3xl font-bold mb-4">{t('boatDetail.notFoundTitle')}</h1>
-        <p className="text-muted-foreground mb-8">{t('boatDetail.notFoundBody')}</p>
-        <Link to="/#boats">
-          <Button>{t('boatDetail.backAll')}</Button>
-        </Link>
-      </div>
-    </main>
-  );
-}
-
-function BoatPageDetail({ boat }: { boat: Boat }) {
-  const { t, i18n } = useTranslation();
+  const pathname = usePathname();
   const lb = useLocalizedBoat(boat);
   const relatedBoats = getRelatedBoats(boat);
-  const baseUrl =
-    (typeof import.meta !== 'undefined' && import.meta.env?.VITE_BASE_URL) ||
-    (typeof window !== 'undefined' ? window.location.origin : '');
-  const boatUrl = `${baseUrl}/boats/${boat.slug}/`;
+  const [shareUrl, setShareUrl] = useState('');
+
+  useEffect(() => {
+    setShareUrl(`${window.location.origin}${pathname}`);
+  }, [pathname]);
 
   useEffect(() => {
     document.title = `${lb.name} | ${t('boatDetail.titleSuffix')}`;
@@ -92,7 +77,7 @@ function BoatPageDetail({ boat }: { boat: Boat }) {
     <main className="min-h-screen bg-background">
       <div className="sticky top-0 z-40 bg-background/95 backdrop-blur-sm border-b">
         <div className="container mx-auto px-4 py-3">
-          <Link to="/#boats">
+          <Link href="/#boats">
             <Button variant="ghost" size="sm" className="gap-2">
               <ArrowLeft className="h-4 w-4" />
               {t('boatDetail.backToBoats')}
@@ -117,11 +102,13 @@ function BoatPageDetail({ boat }: { boat: Boat }) {
               <p className="text-lg text-muted-foreground leading-relaxed">{lb.description}</p>
             </div>
 
-            <SocialShare
-              url={boatUrl}
-              title={`${lb.name} — ${t('boatDetail.titleSuffix')}`}
-              description={lb.description}
-            />
+            {shareUrl ? (
+              <SocialShare
+                url={shareUrl}
+                title={`${lb.name} — ${t('boatDetail.titleSuffix')}`}
+                description={lb.description}
+              />
+            ) : null}
 
             <Separator />
 
@@ -202,7 +189,7 @@ function BoatPageDetail({ boat }: { boat: Boat }) {
             </div>
 
             <div className="pt-4">
-              <Link to="/#contact">
+              <Link href="/#contact">
                 <Button size="lg" className="w-full md:w-auto gap-2">
                   {t('boatDetail.requestInfo')}
                   <ArrowRight className="h-4 w-4" />
@@ -229,13 +216,6 @@ function BoatPageDetail({ boat }: { boat: Boat }) {
   );
 }
 
-export function BoatPage() {
-  const { slug = '' } = useParams();
-  const boat = getBoatBySlug(slug);
-
-  if (!boat) {
-    return <BoatPageNotFound />;
-  }
-
-  return <BoatPageDetail boat={boat} />;
+export function BoatPageClient({ boat }: { boat: Boat }) {
+  return <BoatDetail boat={boat} />;
 }

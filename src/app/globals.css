@@ -60,8 +60,7 @@
     @apply border-border outline-ring/50;
   }
   html,
-  body,
-  #root {
+  body {
     @apply bg-background text-foreground min-h-screen;
   }
 

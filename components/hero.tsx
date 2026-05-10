@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
@@ -45,7 +45,7 @@ export function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button size="lg" asChild className="text-base">
-              <Link to="/#boats">{t('hero.exploreBoats')}</Link>
+              <Link href="/#boats">{t('hero.exploreBoats')}</Link>
             </Button>
             <Button
               size="lg"
@@ -53,14 +53,14 @@ export function Hero() {
               asChild
               className="text-base bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
             >
-              <Link to="/#contact">{t('hero.contactUs')}</Link>
+              <Link href="/#contact">{t('hero.contactUs')}</Link>
             </Button>
           </div>
         </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <Link to="/#boats" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+        <Link href="/#boats" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
           <ChevronDown className="w-8 h-8" />
           <span className="sr-only">{t('hero.scrollToBoats')}</span>
         </Link>

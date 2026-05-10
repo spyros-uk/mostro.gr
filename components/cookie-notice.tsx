@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { dismissCookieBanner, isCookieBannerDismissed } from '@/lib/cookie-banner-storage';
@@ -35,7 +35,7 @@ export function CookieNotice() {
       <div className="container mx-auto px-4 py-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
         <p className="text-sm text-muted-foreground leading-relaxed sm:max-w-[70%]">
           {t('cookieBanner.message')}{' '}
-          <Link to="/cookies" className="font-medium text-primary underline-offset-4 hover:underline">
+          <Link href="/cookies/" className="font-medium text-primary underline-offset-4 hover:underline">
             {t('cookieBanner.learnMore')}
           </Link>
         </p>

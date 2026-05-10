@@ -1,5 +1,7 @@
+'use client';
+
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
@@ -35,7 +37,7 @@ export function LegalPage({ doc }: { doc: LegalDocId }) {
       <Header />
       <main className="flex-1 container mx-auto px-4 py-10 md:py-14 max-w-3xl pb-28 md:pb-32">
         <Button variant="ghost" size="sm" className="mb-8 -ml-2 gap-2" asChild>
-          <Link to="/">
+          <Link href="/">
             <ArrowLeft className="h-4 w-4" />
             {t('legalDocs.common.backHome')}
           </Link>

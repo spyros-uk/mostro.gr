@@ -1,6 +1,6 @@
 'use client';
 
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -21,7 +21,7 @@ export function BoatCard({ boat }: BoatCardProps) {
 
   return (
     <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-      <Link to={`/boats/${b.slug}/`}>
+      <Link href={`/boats/${b.slug}/`}>
         <div className="relative aspect-[4/3] overflow-hidden">
           <picture>
             <source srcSet={webpSrc} type="image/webp" />
@@ -51,7 +51,7 @@ export function BoatCard({ boat }: BoatCardProps) {
       </Link>
       <CardContent className="p-5 space-y-4">
         <div>
-          <Link to={`/boats/${b.slug}/`}>
+          <Link href={`/boats/${b.slug}/`}>
             <h3 className="text-lg font-semibold text-foreground hover:text-primary transition-colors">
               {b.name}
             </h3>
@@ -72,7 +72,7 @@ export function BoatCard({ boat }: BoatCardProps) {
           </div>
         </div>
 
-        <Link to={`/boats/${b.slug}/`}>
+        <Link href={`/boats/${b.slug}/`}>
           <Button
             variant="ghost"
             className="w-full justify-between group/btn hover:bg-primary hover:text-primary-foreground"
